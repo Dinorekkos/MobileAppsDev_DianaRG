@@ -17,6 +17,7 @@ namespace DinoFramework
                 if (instance == null)
                 {
                     instance = Resources.Load<AssetReference_Data>("AssetReferenceData");
+                    
                     if (instance == null)
                         Debug.LogError ($"AssetReferencesData doesn't exist in Resources");
                 }
@@ -27,17 +28,15 @@ namespace DinoFramework
         
         
         
+        [SerializeField] private List<Asset_SO> allAssetsList;
         
-        
-        [SerializeField] private List<Clothe> allAssetsList;
-        
-        public List<Clothe> AllAssets
+        public List<Asset_SO> AllAssets
         {
             get => allAssetsList;
         }
-
-        private List<Clothe> _blockAssetsList;
-        private List<Clothe> _unblockAssetsList;
+        
+        // private List<Asset_SO> _blockAssetsList;
+        // private List<Asset_SO> _unblockAssetsList;
 
     }
 }

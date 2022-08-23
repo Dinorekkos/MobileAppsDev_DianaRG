@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e95f54a24ac0714b8c871cab22e5161, type: 3}
-  m_Name: AssetReferenceData
+  m_Script: {fileID: 11500000, guid: 33a1b0248f0348c182a3a994c5e59f4a, type: 3}
+  m_Name: testRopa_2
   m_EditorClassIdentifier: 
-  allAssetsList:
-  - {fileID: 11400000, guid: 8520d072dd2f19d47861649e91d8828f, type: 2}
-  - {fileID: 11400000, guid: 3316cd3cb38dd044697a5fffe37d942f, type: 2}
+  _assetType: 0
+  _id: test.2
+  _sprite: {fileID: 21300000, guid: f57dfffc64d3e8040812ea901d65b96f, type: 3}
+  isUnlocked: 1
