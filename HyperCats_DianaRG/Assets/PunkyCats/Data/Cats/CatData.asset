@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf87f58f0a6147640aac484fdcd5a0cb, type: 3}
+  m_Name: CatData
+  m_EditorClassIdentifier: 
+  catSkin_Data: {fileID: 11400000, guid: 579383fc3aa57cd4590e9cde4600c45e, type: 2}
+  catEyes_Data: {fileID: 11400000, guid: 94f4507a3074fe14bb38b7df073d9569, type: 2}
+  catPants_Data: {fileID: 0}
+  catChest_Data: {fileID: 0}
+  catHead_Data: {fileID: 0}
+  catHair_Data: {fileID: 0}
+  catTail_Data: {fileID: 0}
+  catShoes_Data: {fileID: 0}
