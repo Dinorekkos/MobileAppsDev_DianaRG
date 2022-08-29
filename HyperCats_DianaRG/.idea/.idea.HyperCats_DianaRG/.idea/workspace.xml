@@ -2,24 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2908611-a987-4224-a099-184261f25e2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Dino/Code/Cat_Data.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dino/Code/Save/AssetType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Dino/Code/Save/AssetType.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Clothe.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Clothe.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/Cat_Data.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Interactions/Cat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/Interactions/Cat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Save/AssetReference_Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/Save/AssetReference_Data.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Save/Asset_SO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/Save/Asset_SO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Code/Save/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Code/Save/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Data/AssetReferenceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Data/AssetReferenceData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Prefabs/Cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Prefabs/Cat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Dino/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Dino/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/AssetReferenceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/AssetReferenceData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/Cats/CatData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/Cats/CatData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/Cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/Cat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Cat_UI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -44,7 +41,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2021.3.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -85,6 +82,7 @@
       <workItem from="1661200349081" duration="3091000" />
       <workItem from="1661293256963" duration="5286000" />
       <workItem from="1661710844896" duration="10391000" />
+      <workItem from="1661804637061" duration="3068000" />
     </task>
     <servers />
   </component>

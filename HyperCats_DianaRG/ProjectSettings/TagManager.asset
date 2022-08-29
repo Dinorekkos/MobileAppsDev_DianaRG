@@ -50,3 +50,6 @@ TagManager:
   - name: Cat Accesories
     uniqueID: 2872203299
     locked: 0
+  - name: Cat Interactions
+    uniqueID: 3329461031
+    locked: 0
