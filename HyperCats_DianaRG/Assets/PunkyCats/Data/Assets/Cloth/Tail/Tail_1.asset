@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a1b0248f0348c182a3a994c5e59f4a, type: 3}
+  m_Name: Tail_1
+  m_EditorClassIdentifier: 
+  _assetType: 8
+  _id: tail.1
+  _sprite: {fileID: 21300000, guid: fdd5796522a9fb54c8b8b622e9647931, type: 3}
+  isUnlocked: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33a1b0248f0348c182a3a994c5e59f4a, type: 3}
-  m_Name: testRopa_2
+  m_Name: Shoes_3
   m_EditorClassIdentifier: 
-  _assetType: 0
-  _id: test.2
-  _sprite: {fileID: 21300000, guid: f57dfffc64d3e8040812ea901d65b96f, type: 3}
-  isUnlocked: 1
+  _assetType: 7
+  _id: shoes.3
+  _sprite: {fileID: 21300000, guid: 2e54b06c04551b94a9ec834acd9858f4, type: 3}
+  isUnlocked: 0
