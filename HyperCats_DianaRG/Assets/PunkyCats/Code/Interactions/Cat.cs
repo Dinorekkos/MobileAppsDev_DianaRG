@@ -17,8 +17,14 @@ public class Cat : MonoBehaviour
     [SerializeField] private SpriteRenderer _catTail_Renderer;
     [SerializeField] private SpriteRenderer _catShoes_Renderer;
 
+    [Header("Interactables")] 
+    [SerializeField] private GameObject handGO;
+    [SerializeField] private GameObject foodGO;
+
     private Asset_SO[] myAssetsSO;
     private SpriteRenderer[] myRenderers;
+    
+    [SerializeField] private CatStates _catStates;
     void Start()
     {
         SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
@@ -27,6 +33,7 @@ public class Cat : MonoBehaviour
     void InitializeCatData()
     {
 
+        Gameplay_UI.Instance.OnSendCatState += HandleCatStates;
         myAssetsSO = new[]
         {
             myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
@@ -44,7 +51,9 @@ public class Cat : MonoBehaviour
         }
         
         UpdateCatSprites();
-
+        
+        
+        TurnOffInteractions();
        
     }
 
@@ -86,4 +95,35 @@ public class Cat : MonoBehaviour
             }
 
     }
+
+
+
+    public void HandleCatStates(CatStates states)
+    {
+        _catStates = states;
+        TurnOffInteractions();
+        switch (_catStates)
+        {
+            case CatStates.Idle :
+                
+                break;
+            case CatStates.Petting:
+                handGO.SetActive(true);
+                
+                break;
+            case CatStates.Feeding:
+                foodGO.SetActive(true);
+                break;
+            
+        }
+    }
+
+    private void TurnOffInteractions()
+    {
+        handGO.SetActive(false);
+        foodGO.SetActive(false);
+    }
+    
+    
+    
 }

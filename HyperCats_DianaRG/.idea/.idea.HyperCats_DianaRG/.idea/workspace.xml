@@ -3,12 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d2908611-a987-4224-a099-184261f25e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/AssetReferenceData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/AssetReferenceData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/Cats/CatData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/Cats/CatData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Interactions/Cat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Interactions/Cat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Gameplay_UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Gameplay_UI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/UI_Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/Cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/Cat.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GameplayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GameplayUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/InventoryUI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/InventoryUI.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +87,7 @@
       <workItem from="1661293256963" duration="5286000" />
       <workItem from="1661710844896" duration="10391000" />
       <workItem from="1661804637061" duration="3068000" />
+      <workItem from="1661898485000" duration="4463000" />
     </task>
     <servers />
   </component>

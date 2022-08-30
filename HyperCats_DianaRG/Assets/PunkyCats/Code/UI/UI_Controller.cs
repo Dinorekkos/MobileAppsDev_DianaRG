@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class UI_Controller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static UI_Controller Instance;
+    [SerializeField] private GameObject[] InGameUIs;
+
     void Start()
+    {
+        Instance = this;
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OpenWindowUI(int selectedUI)
     {
-        
+        for (int i = 0; i < InGameUIs.Length; i++)
+        {
+            InGameUIs[i].SetActive(false);
+        }
+        InGameUIs[selectedUI].SetActive(true);
     }
 }

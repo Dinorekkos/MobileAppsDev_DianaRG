@@ -12,4 +12,11 @@
         Shoes,
         Tail
     }
+
+    public enum CatStates
+    {
+        Idle,  //0
+        Feeding, //1
+        Petting, //2
+    }
 }

@@ -8,5 +8,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/PunkyCats/Scenes/MainScene.unity
+    guid: 230669549fe37e242b5785b7310bb290
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: f1c435defec4fee48bab532b82710450, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: c50d90064596e5548bda8a23574bffad, type: 2}

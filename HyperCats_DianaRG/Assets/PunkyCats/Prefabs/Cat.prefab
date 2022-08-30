@@ -935,3 +935,5 @@ MonoBehaviour:
   _catHead_Renderer: {fileID: 6547352470075623092}
   _catTail_Renderer: {fileID: 3680993859788462282}
   _catShoes_Renderer: {fileID: 1768185927847135780}
+  handGO: {fileID: 1999987698}
+  foodGO: {fileID: 413039433102196245}
