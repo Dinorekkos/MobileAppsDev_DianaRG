@@ -20,7 +20,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Cat_UI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/fc/239520fa/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,7 +45,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2021.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -88,6 +88,8 @@
       <workItem from="1661710844896" duration="10391000" />
       <workItem from="1661804637061" duration="3068000" />
       <workItem from="1661898485000" duration="4463000" />
+      <workItem from="1661913232279" duration="952000" />
+      <workItem from="1661914290704" duration="4052000" />
     </task>
     <servers />
   </component>

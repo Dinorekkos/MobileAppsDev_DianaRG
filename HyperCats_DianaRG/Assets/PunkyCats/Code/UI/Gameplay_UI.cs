@@ -15,12 +15,27 @@ public class Gameplay_UI : MonoBehaviour
 
     public Action<CatStates> OnSendCatState;
 
-    void Start()
+    
+    void Awake()
     {
         Instance = this;
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+    }
 
-        
+    private void Start()
+    {
+        Initialize();
+    }
+
+    private void OnEnable()
+    {
+        // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+
+    }
+
+    private void OnDisable()
+    {
+        // SaveManager.Instance.OnFinishedLoadingAssets -= Initialize;
+
     }
 
     // Update is called once per frame

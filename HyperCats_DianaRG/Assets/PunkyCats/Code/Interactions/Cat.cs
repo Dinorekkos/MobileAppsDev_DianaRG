@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,7 @@ public class Cat : MonoBehaviour
     [SerializeField] private GameObject handGO;
     [SerializeField] private GameObject foodGO;
 
+    private float timerActions = 3f;
     private Asset_SO[] myAssetsSO;
     private SpriteRenderer[] myRenderers;
     
@@ -28,13 +30,28 @@ public class Cat : MonoBehaviour
     void Start()
     {
         SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
+
+    }
+
+    private void OnEnable()
+    {
+
+    }
+
+    private void OnDisable()
+    {
+        SaveManager.Instance.OnFinishedLoadingAssets -= InitializeCatData;
+
     }
 
     void InitializeCatData()
     {
+        Debug.Log("Se hace Suscribe?");
 
         Gameplay_UI.Instance.OnSendCatState += HandleCatStates;
-        myAssetsSO = new[]
+        
+
+            myAssetsSO = new[]
         {
             myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
             myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
@@ -123,7 +140,11 @@ public class Cat : MonoBehaviour
         handGO.SetActive(false);
         foodGO.SetActive(false);
     }
-    
+
+    private void HandleInteractions()
+    {
+        
+    }
     
     
 }
