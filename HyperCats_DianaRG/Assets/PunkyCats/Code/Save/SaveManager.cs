@@ -53,12 +53,12 @@ public class SaveManager : MonoBehaviour
     private void OnEnable()
     {
         Instance = this;
-
+    
     }
 
     void Awake()
     {
-        // Instance = this;
+        Instance = this;
         
     }
 

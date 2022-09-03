@@ -28,7 +28,7 @@ public class Gameplay_UI : MonoBehaviour
 
     private void OnEnable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
         
     }
 

@@ -77,8 +77,8 @@ public class Cat : MonoBehaviour
 
     private void OnEnable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
-        // GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
+        SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
+        GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
 
     }
 

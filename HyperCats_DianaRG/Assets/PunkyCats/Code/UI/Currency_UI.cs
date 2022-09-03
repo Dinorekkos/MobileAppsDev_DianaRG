@@ -26,10 +26,10 @@ public class Currency_UI : MonoBehaviour
 
     private void OnEnable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
-        // GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
-        // UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
-        // CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
+        SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
+        GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
+        UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
     }
 
     private void OnDisable()

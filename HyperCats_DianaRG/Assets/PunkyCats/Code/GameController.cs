@@ -47,7 +47,6 @@ public class GameController : MonoBehaviour
 
     private void SaveBarCurrency(int cuantity)
     { 
-        // SaveManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
         CurrencyManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
         
     }

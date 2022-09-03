@@ -19,25 +19,14 @@ public class Gacha_UI : MonoBehaviour
         PopUpItem.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
     public void BuyGachaPoints()
     {
-        // SaveManager.Instance.BuyCurrency(currency.MyCurrencyType, CurrencyType.Gacha, gachaCost, gachaAmount);
-        
         CurrencyManager.Instance.BuyCurrency(currency.MyCurrencyType, CurrencyType.Gacha, gachaCost, gachaAmount);
-        
         currency.UpdateCurrencyUI(0);
     }
 
     public void SpinGacha()
     {
-        // SaveManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount);
         CurrencyManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount);
         OnGachaSpin?.Invoke();
         

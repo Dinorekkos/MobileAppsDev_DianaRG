@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT60XKTWL",
         "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 13308,
+        "processId": 10638,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -30,6 +30,12 @@
             "deviceId": "R5CT60XKTWL",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 13308,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.DefaultCompany.com.unity.template.mobile2D",
+            "processId": 10638,
             "exited": false
         }
     ],
