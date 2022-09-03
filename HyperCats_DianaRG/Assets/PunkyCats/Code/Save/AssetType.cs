@@ -19,4 +19,13 @@
         Feeding, //1
         Petting, //2
     }
+
+    public enum CurrencyType
+    {
+        None,
+        Common,
+        Premium,
+        Gacha
+        
+    }
 }

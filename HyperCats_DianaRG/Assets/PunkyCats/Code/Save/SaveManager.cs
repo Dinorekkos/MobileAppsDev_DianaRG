@@ -10,12 +10,37 @@ public class SaveManager : MonoBehaviour
     public Action OnFinishedLoadingAssets;
     public AssetReferenceManager assetReferenceManager;
 
+    [SerializeField] private Currency_SO commonSavedSO;
+    [SerializeField] private Currency_SO premiumSavedSO;
+    [SerializeField] private Currency_SO gachaSavedSO;
+
+
+    public int CommonCurrency
+    {
+        get { return commonSavedSO.SavedCurrency; }
+        set { commonSavedSO.SavedCurrency = value; }
+    }
+
+    public int PremiumCurrency
+    {
+        get { return premiumSavedSO.SavedCurrency; }
+        set { premiumSavedSO.SavedCurrency = value; }
+    }
+
+    public int GachaCurrency
+    {
+        get { return gachaSavedSO.SavedCurrency; }
+        set { gachaSavedSO.SavedCurrency = value; }
+    }
+    
+
     private List<Asset_SO> loadAssets;
     private List<Asset_SO> unlockAssets;
     private List<Asset_SO> lockedAssets;
+    
+    
 
-    
-    
+
     public List<Asset_SO> UnlockedAssets
     {
         get => unlockAssets;
@@ -60,6 +85,24 @@ public class SaveManager : MonoBehaviour
         OnFinishedLoadingAssets?.Invoke();
     }
 
+
+    public void AddCurrency(int cuantity, CurrencyType type)
+    {
+        switch (type)
+        {
+            case CurrencyType.Common:
+                CommonCurrency += cuantity;
+                break;
+            case CurrencyType.Premium:
+                PremiumCurrency += cuantity;
+                break;
+            case CurrencyType.Gacha:
+                GachaCurrency += cuantity;
+                break;
+        }
+        
+        // Debug.Log("Se guarda =  " + cuantity + " Currency : " + type);
+    }
     
     
 }

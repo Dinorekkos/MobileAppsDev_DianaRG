@@ -45,11 +45,12 @@ public class Cat : MonoBehaviour
     public float MyCatNeeds
     {
         get { return catNeeds; }
+        set { catNeeds = value; }
     }
     
     [SerializeField] private CatStates _catStates;
 
-    public Action OnTimerDownSec;
+    public Action<float> OnNeedsAction;
 
     private void Awake()
     {
@@ -59,6 +60,7 @@ public class Cat : MonoBehaviour
     void Start()
     {
         SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
+        GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
 
     }
 
@@ -202,17 +204,14 @@ public class Cat : MonoBehaviour
         }
        
 
-        switch (_catStates)
-        {
-            case CatStates.Feeding:
+        // switch (_catStates)
+        // {
+            // case CatStates.Feeding:
         
-                break;
+                // break;
             
-            case CatStates.Petting:
+            // case CatStates.Petting:
                 
-                
-                break;
-        }
     }
 
     public void SetPause(LeanFinger leanFinger)
@@ -251,24 +250,27 @@ public class Cat : MonoBehaviour
             isTimerActionsFinished = true;
             ResetTimerActions();
             ResetGOInteractions();
-            Debug.Log("Termino timer");
         }
 
         if (isTimerActive)
         {
-            if (isTimerPaused)
-            {
-                Debug.Log("<color=#76FE18>pause timer</color>");
-            }
-            else
+            if (!isTimerPaused)
             {
                 timerActions -= Time.deltaTime;
-                Debug.Log(timerActions);
-                
+                catNeeds += 1 * Time.deltaTime;
+                SendingCatNeeds(catNeeds);
             }
         }
     }
-    
-    
-    
+
+    void SendingCatNeeds(float needs)
+    {
+        OnNeedsAction?.Invoke(needs);
+    }
+
+    void ResetCatNeeds(int amount)
+    {
+        amount = 0;
+        catNeeds = amount;
+    }
 }

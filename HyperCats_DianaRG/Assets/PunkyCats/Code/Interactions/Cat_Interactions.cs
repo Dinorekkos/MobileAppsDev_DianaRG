@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Cat_Interactions : MonoBehaviour
 {
-    
-    
-    
-    
     void Start()
     {
         

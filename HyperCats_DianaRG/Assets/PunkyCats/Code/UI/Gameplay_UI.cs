@@ -23,18 +23,18 @@ public class Gameplay_UI : MonoBehaviour
 
     private void Start()
     {
-        Initialize();
+        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
     }
 
     private void OnEnable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
 
     }
 
     private void OnDisable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets -= Initialize;
+        SaveManager.Instance.OnFinishedLoadingAssets -= Initialize;
 
     }
 
@@ -46,8 +46,9 @@ public class Gameplay_UI : MonoBehaviour
 
     void Initialize()
     {
-
-        interactPoints = Cat.Instance.MyCatNeeds;
+        Cat.Instance.OnNeedsAction += UpdateSliderInteractions;
+        GameController.Instance.OnCatBarNeedsFill += ResetSliderInteractions;
+        
         _interactionsGO.SetActive(false);
 
     }
@@ -64,9 +65,9 @@ public class Gameplay_UI : MonoBehaviour
         _interactionsGO.SetActive(active);
     }
 
-    void UpdateSliderInteractions()
+    void UpdateSliderInteractions(float addedPoints)
     {
-        interactPoints++;
+        interactPoints =  addedPoints;
         slider.value = interactPoints;
     }
 
@@ -75,6 +76,15 @@ public class Gameplay_UI : MonoBehaviour
         CatStates catState = (CatStates)catInt;
         OnSendCatState?.Invoke(catState);
     }
+
+    void ResetSliderInteractions(int amount)
+    {
+        amount = 0;
+        interactPoints = amount;
+        slider.value = interactPoints;
+
+        
+    }
     
-    
+
 }
