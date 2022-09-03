@@ -39,12 +39,12 @@ namespace DinoFramework
 
             if (CanSubstractCurrency(substractCurrency, myCurrencyType, substractCurrency))
             {
-                Debug.Log("Se compran monedas");
+                Debug.Log("Se compra: "+ addCurrency +" de: "+ desireCurrency + " por: "+ substractCurrency+" de: " + myCurrencyType );
                 AddCurrency(addCurrency, desireCurrency);
             }
             else
             {
-                Debug.LogError("No hay suficientes monedas para comprar");
+                Debug.LogError("No hay suficientes: " + myCurrencyType + " para comprar:  " + desireCurrency);
             }
         }
 
