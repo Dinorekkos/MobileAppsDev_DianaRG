@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,11 @@ public class UI_Controller : MonoBehaviour
 {
     public static UI_Controller Instance;
     [SerializeField] private GameObject[] InGameUIs;
+
+    public Action<int> OnChangeUI;
+    
+    
+    
 
     void Start()
     {
@@ -24,5 +30,11 @@ public class UI_Controller : MonoBehaviour
             InGameUIs[i].SetActive(false);
         }
         InGameUIs[selectedUI].SetActive(true);
+        UpdateCurrenciesUIs();
+    }
+    
+    public void UpdateCurrenciesUIs()
+    {
+        OnChangeUI?.Invoke(0);
     }
 }

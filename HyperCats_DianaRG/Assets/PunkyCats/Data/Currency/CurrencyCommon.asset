@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: CurrencyCommon
   m_EditorClassIdentifier: 
   _currencyType: 1
-  saveCurrency: 10
+  saveCurrency: 0

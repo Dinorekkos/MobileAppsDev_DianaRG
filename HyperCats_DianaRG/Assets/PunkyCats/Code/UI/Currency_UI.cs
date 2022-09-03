@@ -9,10 +9,19 @@ public class Currency_UI : MonoBehaviour
 {
     [SerializeField] private Text currencyText;
     [SerializeField] private CurrencyType currencyType;
+
+    public CurrencyType MyCurrencyType
+    {
+        get { return currencyType; }
+    }
     void Start()
     {
         SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
         GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
+        UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
+        SaveManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
+        
+        Initialze();
     }
 
     private void OnEnable()
@@ -32,7 +41,7 @@ public class Currency_UI : MonoBehaviour
     }
 
 
-    void UpdateCurrencyUI(int currency)
+  public void UpdateCurrencyUI(int currency = 0)
     {
         switch (currencyType)
         {

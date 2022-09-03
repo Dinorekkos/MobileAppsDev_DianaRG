@@ -51,9 +51,7 @@ public class GameController : MonoBehaviour
     }
 
     private void SaveBarCurrency(int cuantity)
-    {            
-        Debug.Log("Cuantas veces se llama el Add currwncy");
-
+    { 
         SaveManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
     }
     

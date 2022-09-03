@@ -38,7 +38,6 @@ public class Gameplay_UI : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -65,6 +64,8 @@ public class Gameplay_UI : MonoBehaviour
         _interactionsGO.SetActive(active);
     }
 
+   
+
     void UpdateSliderInteractions(float addedPoints)
     {
         interactPoints =  addedPoints;
@@ -82,7 +83,6 @@ public class Gameplay_UI : MonoBehaviour
         amount = 0;
         interactPoints = amount;
         slider.value = interactPoints;
-
         
     }
     

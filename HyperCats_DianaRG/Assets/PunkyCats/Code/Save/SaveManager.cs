@@ -14,6 +14,7 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private Currency_SO premiumSavedSO;
     [SerializeField] private Currency_SO gachaSavedSO;
 
+    public Action<int> OnCurrencyChanged;
 
     public int CommonCurrency
     {
@@ -101,8 +102,91 @@ public class SaveManager : MonoBehaviour
                 break;
         }
         
+        OnCurrencyChanged?.Invoke(0);
         // Debug.Log("Se guarda =  " + cuantity + " Currency : " + type);
     }
-    
+
+    public void BuyCurrency(CurrencyType myCurrencyType, CurrencyType desireCurrency, int substractCurrency, int addCurrency)
+    {
+        bool canBuyCurrency = false;
+        switch (myCurrencyType)
+        {
+            case CurrencyType.Common: 
+                if (CommonCurrency > 0) 
+                {
+                    canBuyCurrency = true; 
+                    CommonCurrency -= substractCurrency; 
+                } 
+                break;
+            case CurrencyType.Premium:
+                if (PremiumCurrency > 0)
+                {
+                    canBuyCurrency = true;
+                    PremiumCurrency -= substractCurrency;
+                }
+                break;
+            case CurrencyType.Gacha:
+                if (GachaCurrency > 0)
+                {
+                    canBuyCurrency = true;
+                    GachaCurrency -= substractCurrency;
+                }
+                
+                break;
+        }
+
+        if (canBuyCurrency)
+        {
+            Debug.Log("Se compran monedas");
+            AddCurrency(addCurrency, desireCurrency);
+        }
+        else
+        {
+            Debug.LogError("No hay suficientes monedas para comprar");
+        }
+    }
+
+    public void SpendCurrency(CurrencyType type, int amount)
+    {
+        switch (type)
+        {
+            case CurrencyType.Common:
+                if (CommonCurrency > 0)
+                {
+                    CommonCurrency -= amount;
+                    OnCurrencyChanged?.Invoke(0);
+
+                }
+                else
+                {
+                    Debug.LogError("No hay suficientes monedas para gastar");
+                }
+                break;
+            case CurrencyType.Premium:
+                if (PremiumCurrency > 0)
+                {
+                    PremiumCurrency -= amount;
+                    OnCurrencyChanged?.Invoke(0);
+
+                }
+                else
+                {
+                    Debug.LogError("No hay suficientes monedas para gastar");
+                }
+                break;
+            case CurrencyType.Gacha:
+                if (GachaCurrency > 0)
+                {
+                    GachaCurrency -= amount;
+                    OnCurrencyChanged?.Invoke(0);
+
+                }
+                else
+                {
+                    Debug.LogError("No hay suficientes monedas para gastar");
+                }
+                break;
+        }
+    }
     
 }

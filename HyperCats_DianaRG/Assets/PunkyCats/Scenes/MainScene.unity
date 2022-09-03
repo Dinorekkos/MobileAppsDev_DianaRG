@@ -410,6 +410,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503851919}
@@ -418,11 +422,19 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OpenWindowUI
       objectReference: {fileID: 0}
     - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_Controller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UI_Controller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4747976962851347031, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
@@ -1125,8 +1137,36 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 503851919}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateCurrenciesUIs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_Controller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3378308456322939121, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1151,6 +1191,34 @@ PrefabInstance:
     - target: {fileID: 3378308456322939121, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 503851919}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateCurrenciesUIs
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UI_Controller, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378308456674112226, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4007150262991313843, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_IsActive
