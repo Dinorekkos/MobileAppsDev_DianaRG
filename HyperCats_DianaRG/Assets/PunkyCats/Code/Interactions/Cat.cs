@@ -77,12 +77,16 @@ public class Cat : MonoBehaviour
 
     private void OnEnable()
     {
-        SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
+        // SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
+        // GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
+
     }
 
     private void OnDisable()
     {
         SaveManager.Instance.OnFinishedLoadingAssets -= InitializeCatData;
+        GameController.Instance.OnCatBarNeedsFill -= ResetCatNeeds;
+
 
     }
 
@@ -216,7 +220,7 @@ public class Cat : MonoBehaviour
 
     public void SetPause(LeanFinger leanFinger)
     {
-        Debug.Log("<color=#76FE18>pause timer</color>");
+        // Debug.Log("<color=#76FE18>pause timer</color>");
         PauseTimerActions(true);
     }
     void StartTimerActions()

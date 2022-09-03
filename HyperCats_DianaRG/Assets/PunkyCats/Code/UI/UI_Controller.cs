@@ -9,13 +9,16 @@ public class UI_Controller : MonoBehaviour
     [SerializeField] private GameObject[] InGameUIs;
 
     public Action<int> OnChangeUI;
-    
-    
-    
+
+
+    private void Awake()
+    {
+        Instance = this;
+
+    }
 
     void Start()
     {
-        Instance = this;
     }
 
     void Update()

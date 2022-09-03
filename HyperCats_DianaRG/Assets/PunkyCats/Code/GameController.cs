@@ -36,12 +36,7 @@ public class GameController : MonoBehaviour
         OnCatBarNeedsFill -= SaveBarCurrency;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     void HandleCatNeeds(float catNeeds)
     {
         if (catNeeds >= needsCatBar)
@@ -52,7 +47,9 @@ public class GameController : MonoBehaviour
 
     private void SaveBarCurrency(int cuantity)
     { 
-        SaveManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
+        // SaveManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
+        CurrencyManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
+        
     }
     
 

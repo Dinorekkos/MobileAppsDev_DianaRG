@@ -19,7 +19,7 @@ public class Currency_UI : MonoBehaviour
         SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
         GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
         UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
-        SaveManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
         
         Initialze();
     }
@@ -27,11 +27,17 @@ public class Currency_UI : MonoBehaviour
     private void OnEnable()
     {
         // SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
+        // GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
+        // UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
+        // CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
     }
 
     private void OnDisable()
     {
-        // SaveManager.Instance.OnFinishedLoadingAssets -= Initialze;
+        SaveManager.Instance.OnFinishedLoadingAssets -= Initialze;
+        GameController.Instance.OnCatBarNeedsFill -= UpdateCurrencyUI;
+        UI_Controller.Instance.OnChangeUI -= UpdateCurrencyUI;
+        CurrencyManager.Instance.OnCurrencyChanged -= UpdateCurrencyUI;
     }
 
     
