@@ -3,8 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DinoFramework;
+using Lean.Common;
+using Lean.Touch;
+using Unity.VisualScripting;
+
 public class Cat : MonoBehaviour
 {
+    public static Cat Instance;
     [Header("Data")]
     public Cat_Data myCatData;
     
@@ -25,17 +30,52 @@ public class Cat : MonoBehaviour
     private float timerActions = 3f;
     private Asset_SO[] myAssetsSO;
     private SpriteRenderer[] myRenderers;
+
+    private Vector2 _originPosHand;
+    private Vector2 _originPosFood;
+    
+    public bool isTimerActive;
+    public bool isTimerPaused;
+    public bool isTimerActionsFinished;
+    private float timerInteractions;
+    private float interpolationPeriod = 1f;
+
+    private float catNeeds;
+
+    public float MyCatNeeds
+    {
+        get { return catNeeds; }
+    }
     
     [SerializeField] private CatStates _catStates;
+
+    public Action OnTimerDownSec;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
 
     }
 
+    private void Update()
+    {
+        if (_catStates != CatStates.Idle)
+        {
+            if (!isTimerActionsFinished)
+            {
+                CountTimer();
+            } 
+        }
+    }
+
     private void OnEnable()
     {
-
+        SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
     }
 
     private void OnDisable()
@@ -46,12 +86,12 @@ public class Cat : MonoBehaviour
 
     void InitializeCatData()
     {
-        Debug.Log("Se hace Suscribe?");
-
-        Gameplay_UI.Instance.OnSendCatState += HandleCatStates;
+        _originPosFood = foodGO.transform.position;
+        _originPosHand = handGO.transform.position;
         
+        Gameplay_UI.Instance.OnSendCatState += HandleCatStates;
 
-            myAssetsSO = new[]
+        myAssetsSO = new[]
         {
             myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
             myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
@@ -68,9 +108,7 @@ public class Cat : MonoBehaviour
         }
         
         UpdateCatSprites();
-        
-        
-        TurnOffInteractions();
+        ResetGOInteractions();
        
     }
 
@@ -118,7 +156,7 @@ public class Cat : MonoBehaviour
     public void HandleCatStates(CatStates states)
     {
         _catStates = states;
-        TurnOffInteractions();
+        ResetGOInteractions();
         switch (_catStates)
         {
             case CatStates.Idle :
@@ -135,16 +173,102 @@ public class Cat : MonoBehaviour
         }
     }
 
-    private void TurnOffInteractions()
+    private void ResetGOInteractions()
     {
+        handGO.transform.position = _originPosHand;
+        foodGO.transform.position = _originPosFood;
+        
         handGO.SetActive(false);
         foodGO.SetActive(false);
-    }
-
-    private void HandleInteractions()
-    {
         
     }
+
+    public void HandleInteractions(LeanFinger finger)
+    {
+        if (_catStates != CatStates.Idle)
+        {
+            if (handGO.activeSelf || foodGO.activeSelf)
+            {
+                if(catNeeds >= 6) 
+                    return;
+
+                if (isTimerActive && isTimerPaused)
+                    PauseTimerActions(false);
+                
+                
+                if (!isTimerActive) 
+                    StartTimerActions();
+            }
+        }
+       
+
+        switch (_catStates)
+        {
+            case CatStates.Feeding:
+        
+                break;
+            
+            case CatStates.Petting:
+                
+                
+                break;
+        }
+    }
+
+    public void SetPause(LeanFinger leanFinger)
+    {
+        Debug.Log("<color=#76FE18>pause timer</color>");
+        PauseTimerActions(true);
+    }
+    void StartTimerActions()
+    {
+        isTimerActionsFinished = false;
+        isTimerActive = true;
+        timerActions = 3f;
+    }
+
+    void PauseTimerActions(bool pause)
+    {
+        if (isTimerActive && !isTimerActionsFinished)
+        {
+            isTimerPaused = pause;
+        }
+    }
+    
+    void ResetTimerActions()
+    {
+        isTimerActive = false;
+        isTimerPaused = false;
+        timerActions = 0;
+    }
+
+    void CountTimer()
+    {
+        
+        if (timerActions <= 0)
+        {
+            if(!isTimerActive) return;
+            isTimerActionsFinished = true;
+            ResetTimerActions();
+            ResetGOInteractions();
+            Debug.Log("Termino timer");
+        }
+
+        if (isTimerActive)
+        {
+            if (isTimerPaused)
+            {
+                Debug.Log("<color=#76FE18>pause timer</color>");
+            }
+            else
+            {
+                timerActions -= Time.deltaTime;
+                Debug.Log(timerActions);
+                
+            }
+        }
+    }
+    
     
     
 }

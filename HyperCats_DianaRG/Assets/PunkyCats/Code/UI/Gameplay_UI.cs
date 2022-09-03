@@ -11,7 +11,7 @@ public class Gameplay_UI : MonoBehaviour
     [SerializeField] private GameObject _interactionsGO;
     [SerializeField] private Slider slider;
     
-    private int interactPoints = 0;
+    private float interactPoints = 0;
 
     public Action<CatStates> OnSendCatState;
 
@@ -46,6 +46,8 @@ public class Gameplay_UI : MonoBehaviour
 
     void Initialize()
     {
+
+        interactPoints = Cat.Instance.MyCatNeeds;
         _interactionsGO.SetActive(false);
 
     }

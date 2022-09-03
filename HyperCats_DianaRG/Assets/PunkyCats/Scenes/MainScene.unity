@@ -534,6 +534,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4849642774259787260, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
   m_PrefabInstance: {fileID: 1092999147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1160257272 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 235823800712565375, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+  m_PrefabInstance: {fileID: 9132747764678355068}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56062b68fc687c04994abd844844b10f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1196468631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1100,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4007150262991313843, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4121068097374918016, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1339,6 +1354,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 730538565}
     m_Modifications:
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1160257272}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1160257272}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HandleInteractions
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Cat, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Cat, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5175381048341879153, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
+      propertyPath: onFinger.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9132747764659522041, guid: eea7bd528c6873f4aa33287b97858bb0, type: 3}
       propertyPath: m_Name
       value: Cat
