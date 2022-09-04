@@ -37,12 +37,7 @@ public class Gameplay_UI : MonoBehaviour
         SaveManager.Instance.OnFinishedLoadingAssets -= Initialize;
 
     }
-
-    void Update()
-    {
-        
-    }
-
+    
     void Initialize()
     {
         Cat.Instance.OnNeedsAction += UpdateSliderInteractions;

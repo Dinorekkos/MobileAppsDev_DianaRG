@@ -16,16 +16,7 @@ public class UI_Controller : MonoBehaviour
         Instance = this;
 
     }
-
-    void Start()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-    }
-
+    
 
     public void OpenWindowUI(int selectedUI)
     {

@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DinoFramework;
-using Lean.Common;
 using Lean.Touch;
-using Unity.VisualScripting;
 
 public class Cat : MonoBehaviour
 {
