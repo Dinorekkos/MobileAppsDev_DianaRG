@@ -18,5 +18,9 @@ public class Closet_UI : MonoBehaviour
         AssetType assetType = (AssetType) assetInt;
         OnChangedFilter?.Invoke(assetType);
     }
-    
+
+    public void UpdateCatScene()
+    {
+        Cat.Instance.UpdateCatSprites();
+    }
 }

@@ -28,8 +28,6 @@ public class Cat_UI : MonoBehaviour
     public Asset_SO[] myAssetsSO;
     public Image[] myRenderersImages;
     
-    
-    
     void Start()
     {
         if (!isAssetViwer)
@@ -39,9 +37,7 @@ public class Cat_UI : MonoBehaviour
         }
         
     }
-
-  
-
+    
    public void UpdateCatSprites()
     {
         myAssetsSO = new[]

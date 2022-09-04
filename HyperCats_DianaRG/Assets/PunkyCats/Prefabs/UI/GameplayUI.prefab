@@ -220,7 +220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3378308455553064030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f132faa4cbcc6343bcaed8edc257ab2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 698f7091347bd1a42bbb8f5cdc4100a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99e69fa471495aa408bc24cee64717f0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dd4ee633071d4e42a1c107e84b733e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1522,6 +1522,10 @@ PrefabInstance:
     - target: {fileID: 1944089350166634384, guid: 03235461121073b43940f5676f32922a, type: 3}
       propertyPath: m_Name
       value: Premium_Currency
+      objectReference: {fileID: 0}
+    - target: {fileID: 1944089350166634384, guid: 03235461121073b43940f5676f32922a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1944089350166634415, guid: 03235461121073b43940f5676f32922a, type: 3}
       propertyPath: m_Pivot.x

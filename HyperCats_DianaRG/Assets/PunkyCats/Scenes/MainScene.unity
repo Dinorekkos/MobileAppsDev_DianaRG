@@ -578,6 +578,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -60
       objectReference: {fileID: 0}
+    - target: {fileID: 7424004834751863242, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
+      propertyPath: myCatUI
+      value: 
+      objectReference: {fileID: 2021619263}
     - target: {fileID: 7990142504950513664, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1185,18 +1189,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 503851919}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1730963378}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
@@ -1204,11 +1220,23 @@ PrefabInstance:
       value: OpenWindowUI
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: UpdateCatScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UI_Controller, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Closet_UI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3006582414037347140, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3330212967177226252, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
@@ -2007,6 +2035,17 @@ Transform:
   m_Father: {fileID: 1042373943}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2021619263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4444564482568679579, guid: 3ce0cdd37cc3f504c9ad935657ff0321, type: 3}
+  m_PrefabInstance: {fileID: 1092999147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee33d4e70b3cf469d1a8631d7f8975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2140413734
 GameObject:
   m_ObjectHideFlags: 0

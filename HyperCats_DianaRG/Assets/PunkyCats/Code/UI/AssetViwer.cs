@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using DinoFramework;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class AssetViwer : MonoBehaviour
 {

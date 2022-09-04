@@ -28,8 +28,8 @@ public class Cat : MonoBehaviour
     [SerializeField] private GameObject foodGO;
 
     private float timerActions = 3f;
-    private Asset_SO[] myAssetsSO;
-    private SpriteRenderer[] myRenderers;
+    public Asset_SO[] myAssetsSO;
+    public SpriteRenderer[] myRenderers;
 
     private Vector2 _originPosHand;
     private Vector2 _originPosFood;
@@ -97,29 +97,27 @@ public class Cat : MonoBehaviour
         
         Gameplay_UI.Instance.OnSendCatState += HandleCatStates;
 
-        myAssetsSO = new[]
-        {
-            myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
-            myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
-        };
-        myRenderers = new[]
-        {
-            _catSkin_Renderer, _catEyes_Renderer, _catPants_Renderer, _catChest_Renderer, _catHair_Renderer,
-            _catHead_Renderer, _catTail_Renderer, _catShoes_Renderer
-        };
-
-        for (int i = 0; i < myRenderers.Length; i++)
-        {
-            myRenderers[i].sprite = null;
-        }
-        
+        ResetAssets();
         UpdateCatSprites();
         ResetGOInteractions();
        
     }
 
-    void UpdateCatSprites()
+    void ResetAssets()
     {
+        for (int i = 0; i < myRenderers.Length; i++)
+        {
+            myRenderers[i].sprite = null;
+        }
+
+    }
+    public void UpdateCatSprites()
+    {
+        myAssetsSO = new[]
+        {
+            myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
+            myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
+        };
         if (myAssetsSO != null)
             foreach (Asset_SO asset in myAssetsSO)
             {

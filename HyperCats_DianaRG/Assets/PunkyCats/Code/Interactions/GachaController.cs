@@ -19,12 +19,7 @@ public class GachaController : MonoBehaviour
     {
         SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     private void OnEnable()
     {
