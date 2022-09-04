@@ -12,8 +12,8 @@ public class Gacha_UI : MonoBehaviour
     public int gachaAmount = 3;
     public Currency_UI currency;
     public GameObject PopUpItem;
+    public AssetViwer assetViwer;
 
-    private Action OnGachaSpin;
     void Start()
     {
         PopUpItem.SetActive(false);
@@ -27,8 +27,18 @@ public class Gacha_UI : MonoBehaviour
 
     public void SpinGacha()
     {
-        CurrencyManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount);
-        OnGachaSpin?.Invoke();
-        
+        if (CurrencyManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount))
+        {
+            PopUpItem.SetActive(true);
+            assetViwer.LoadAsset(GachaController.Instance.ShowAssetUI());
+            
+        }
     }
+
+    public void ClosePopUpItem()
+    {
+        PopUpItem.SetActive(false);
+    }
+    
+    
 }

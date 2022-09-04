@@ -13,6 +13,7 @@ namespace DinoFramework
        public bool IsUnlocked
        {
            get => isUnlocked;
+           set => isUnlocked = value;
        }
 
        public Sprite Sprite

@@ -48,17 +48,17 @@ namespace DinoFramework
             }
         }
 
-        public void SpendCurrency(CurrencyType type, int amount)
+        public bool SpendCurrency(CurrencyType type, int amount)
         {
             if (CanSubstractCurrency(0,type, amount))
             {
+                
                 OnCurrencyChanged?.Invoke(0);
-            }
-            else
-            {
-                Debug.LogError("No hay suficientes monedas para gastar");
+                return true;
             }
             
+            Debug.LogError("No hay suficientes monedas para gastar");
+            return false;
         }
         
         private bool CanSubstractCurrency(int minium, CurrencyType currencyType, int substractCurrency)

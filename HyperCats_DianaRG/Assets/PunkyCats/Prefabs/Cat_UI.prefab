@@ -75,7 +75,17 @@ MonoBehaviour:
   _catHead_Image: {fileID: 7086118809810155505}
   _catTail_Image: {fileID: 5724564119779403117}
   _catShoes_Image: {fileID: 8517185483457207191}
+  isAssetViwer: 0
   myAssetsSO: []
+  myRenderersImages:
+  - {fileID: 3704057016146704769}
+  - {fileID: 6190263035851484524}
+  - {fileID: 4340749354877381084}
+  - {fileID: 5070829705547560362}
+  - {fileID: 7086118809810155505}
+  - {fileID: 5724564119779403117}
+  - {fileID: 8517185483457207191}
+  - {fileID: 377205443107425751}
 --- !u!1 &2291163846835049910
 GameObject:
   m_ObjectHideFlags: 0

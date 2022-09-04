@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,26 +21,28 @@ public class Cat_UI : MonoBehaviour
     [SerializeField] private Image _catTail_Image;
     [SerializeField] private Image _catShoes_Image;
 
+    // private Action OnWeareAsset;
+
+    public bool isAssetViwer;
+
     private Asset_SO[] myAssetsSO;
-    private Image[] myRenderersImages;
+    public Image[] myRenderersImages;
+    
+    
+    
     void Start()
     {
-        myAssetsSO = new[]
+        if (!isAssetViwer)
         {
-            myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
-            myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
-        };
-        myRenderersImages = new[]
-        {
-            _catSkin_Image, _catEyes_Image, _catPants_Image, _catChest_Image, _catHair_Image,
-            _catHead_Image, _catTail_Image, _catShoes_Image
-        };
-        for (int i = 0; i < myRenderersImages.Length; i++)
-        {
-            myRenderersImages[i].color = new Color(0,0,0,0);
+            myAssetsSO = new[]
+            {
+                myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
+                myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
+            };
+            ResetAssets();
+            UpdateCatSprites();
         }
         
-        UpdateCatSprites();
     }
 
   
@@ -70,22 +73,22 @@ public class Cat_UI : MonoBehaviour
 
                             break;
                         case AssetType.Chest:
-                            _catChest_Image.sprite = myCatData.catChest_Data.Sprite;
+                             _catChest_Image.sprite = myCatData.catChest_Data.Sprite;
                             _catChest_Image.color = Color.white;
 
                             break;
                         case AssetType.Tail:
-                            _catTail_Image.sprite = myCatData.catTail_Data.Sprite;
+                             _catTail_Image.sprite = myCatData.catTail_Data.Sprite;
                             _catTail_Image.color = Color.white;
 
                             break;
                         case AssetType.Pants:
-                            _catPants_Image.sprite = myCatData.catPants_Data.Sprite;
+                             _catPants_Image.sprite = myCatData.catPants_Data.Sprite;
                             _catPants_Image.color = Color.white;
 
                             break;
                         case AssetType.Shoes:
-                            _catShoes_Image.sprite = myCatData.catShoes_Data.Sprite;
+                             _catShoes_Image.sprite = myCatData.catShoes_Data.Sprite;
                             _catShoes_Image.color = Color.white;
 
                             break;
@@ -99,4 +102,62 @@ public class Cat_UI : MonoBehaviour
             }
         }
     }
+
+    void ResetAssets()
+    {
+        for (int i = 0; i < myRenderersImages.Length; i++)
+        {
+            myRenderersImages[i].color = new Color(0,0,0,0);
+        }
+    }
+
+    public void SetAssetViwer(AssetType assetType, Sprite assetSprite)
+    {
+        ResetAssets();
+        switch (assetType)
+        {
+            case AssetType.Head:
+                if (isAssetViwer) _catHead_Image.sprite = assetSprite;
+                _catHead_Image.color = Color.white;
+                break;
+            case AssetType.Hair:
+                if (isAssetViwer) _catHair_Image.sprite = assetSprite;
+                _catHair_Image.color = Color.white;
+
+                break;
+            case AssetType.Eyes:
+                if (isAssetViwer) _catEyes_Image.sprite = assetSprite;
+                _catEyes_Image.color = Color.white;
+
+                break;
+            case AssetType.Chest:
+                if (isAssetViwer) _catChest_Image.sprite = assetSprite;
+                _catChest_Image.color = Color.white;
+
+                break;
+            case AssetType.Tail:
+                if (isAssetViwer) _catTail_Image.sprite = assetSprite;
+                _catTail_Image.color = Color.white;
+
+                break;
+            case AssetType.Pants:
+                if (isAssetViwer) _catPants_Image.sprite = assetSprite;
+                _catPants_Image.color = Color.white;
+
+                break;
+            case AssetType.Shoes:
+                if (isAssetViwer) _catShoes_Image.sprite = assetSprite;
+                _catShoes_Image.color = Color.white;
+
+                break;
+            case AssetType.Skin:
+                if (isAssetViwer) _catSkin_Image.sprite = assetSprite;
+                _catSkin_Image.color = Color.white;
+
+                break;
+        }
+        
+    }
+    
+    
 }
