@@ -2,15 +2,15 @@
 {
     public enum AssetType
     {
-        None,
-        Skin,
-        Head,
-        Hair,
-        Eyes,
-        Chest,
-        Pants,
-        Shoes,
-        Tail
+        None, //0
+        Skin, //1
+        Head, //2
+        Hair, //3
+        Eyes, //4
+        Chest,//5
+        Pants,//6
+        Shoes,//7
+        Tail  //8
     }
 
     public enum CatStates

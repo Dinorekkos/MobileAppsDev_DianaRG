@@ -19,12 +19,13 @@ public class UI_Controller : MonoBehaviour
 
     void Start()
     {
-    }
-
-    void Update()
-    {
         
     }
+
+    private void OnEnable()
+    {
+    }
+
 
     public void OpenWindowUI(int selectedUI)
     {

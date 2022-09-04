@@ -8,49 +8,63 @@ public class ClosetController : MonoBehaviour
 {
     [SerializeField] private AssetViwer itemPrefab;
     [SerializeField] private RectTransform contentPanel;
-    
-    [SerializeField] private List<AssetViwer> itemsInv;
+    [SerializeField] private AssetType defaultFilter = AssetType.Skin;
+    [SerializeField] List<AssetViwer> itemsDisplayed;
 
-    [SerializeField] private CurrencyType filterAssets;
     void Start()
     {
-        // SaveManager.Instance.OnUnlockAsset += InitializeInventoryUI;
+        Closet_UI.Instance.OnChangedFilter += InitializeInventoryUI;
+        InitializeInventoryUI(defaultFilter);
     }
 
     private void OnEnable()
     { 
-        // SaveManager.Instance.OnUnlockAsset += InitializeInventoryUI;
+        Closet_UI.Instance.OnChangedFilter += InitializeInventoryUI;
     }
 
     private void OnDisable()
     {
-        // SaveManager.Instance.OnUnlockAsset -= InitializeInventoryUI;
+        Closet_UI.Instance.OnChangedFilter -= InitializeInventoryUI;
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void InitializeInventoryUI()
+    public void InitializeInventoryUI(AssetType filter)
     {
         List<Asset_SO> unlockdeAssets = SaveManager.Instance.UnlockedAssets;
-     
-        for (int i = 0; i < unlockdeAssets.Count; i++)
+        List<Asset_SO> filteredAssets = new List<Asset_SO>();
+        
+
+        if(itemsDisplayed.Count > 0)
+        {
+            foreach (AssetViwer item in itemsDisplayed)
+            {
+                Destroy(item.gameObject);
+            }
+            itemsDisplayed.Clear();
+        }
+
+        foreach (Asset_SO asset in unlockdeAssets)
+        {
+            if (asset.AssetType == filter)
+            {
+                filteredAssets.Add(asset);
+            }
+        }
+        
+        for (int i = 0; i < filteredAssets.Count; i++)
         {
             AssetViwer assetViwer = Instantiate(itemPrefab, Vector3.zero, Quaternion.identity);
             assetViwer.transform.SetParent(contentPanel);
-            itemsInv.Add(assetViwer);
+            assetViwer.transform.localScale = Vector3.one;
 
-            Asset_SO assetSo = unlockdeAssets[i]; 
-            Debug.Log(assetSo.ID); 
+            itemsDisplayed.Add(assetViwer);
+
+            Asset_SO assetSo = filteredAssets[i];
             assetViwer.myAsset_Data = assetSo;
             assetViwer.CatUI.SetAssetViwer(assetSo.AssetType, assetSo.Sprite);
         }
         
-        
     }
-    
+
 }

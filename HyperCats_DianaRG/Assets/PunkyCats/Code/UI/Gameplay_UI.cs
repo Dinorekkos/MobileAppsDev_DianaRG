@@ -14,7 +14,7 @@ public class Gameplay_UI : MonoBehaviour
     private float interactPoints = 0;
 
     public Action<CatStates> OnSendCatState;
-
+    
     
     void Awake()
     {
