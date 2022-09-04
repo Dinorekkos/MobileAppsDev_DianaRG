@@ -10,11 +10,19 @@ public class SaveManager : MonoBehaviour
     public Action OnFinishedLoadingAssets;
     public AssetReferenceManager assetReferenceManager;
 
+    [SerializeField] private Cat_Data _savedCatData;
+
     [SerializeField] private Currency_SO commonSavedSO;
     [SerializeField] private Currency_SO premiumSavedSO;
     [SerializeField] private Currency_SO gachaSavedSO;
 
     public Action OnUnlockAsset;
+
+    public Cat_Data SavedCatData
+    {
+        get => _savedCatData;
+        set => _savedCatData = value;
+    }
     public int CommonCurrency
     {
         get { return commonSavedSO.SavedCurrency; }

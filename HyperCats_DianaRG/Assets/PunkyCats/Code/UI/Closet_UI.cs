@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using DinoFramework;
 using UnityEngine;
 
@@ -13,19 +11,8 @@ public class Closet_UI : MonoBehaviour
     {
         Instance = this;
     }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
+    
+    
     public void ChangeFilter(int assetInt)
     {
         AssetType assetType = (AssetType) assetInt;

@@ -25,7 +25,7 @@ public class Cat_UI : MonoBehaviour
 
     public bool isAssetViwer;
 
-    private Asset_SO[] myAssetsSO;
+    public Asset_SO[] myAssetsSO;
     public Image[] myRenderersImages;
     
     
@@ -34,11 +34,6 @@ public class Cat_UI : MonoBehaviour
     {
         if (!isAssetViwer)
         {
-            myAssetsSO = new[]
-            {
-                myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
-                myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
-            };
             ResetAssets();
             UpdateCatSprites();
         }
@@ -47,13 +42,17 @@ public class Cat_UI : MonoBehaviour
 
   
 
-    void UpdateCatSprites()
+   public void UpdateCatSprites()
     {
+        myAssetsSO = new[]
+        {
+            myCatData.catChest_Data, myCatData.catEyes_Data, myCatData.catSkin_Data, myCatData.catShoes_Data,
+            myCatData.catTail_Data, myCatData.catHair_Data, myCatData.catHead_Data, myCatData.catPants_Data
+        };
         if (myAssetsSO != null)
         {
             foreach (Asset_SO asset in myAssetsSO)
             {
-                
                 if (asset != null)
                 {
                     switch (asset.AssetType)
@@ -158,6 +157,7 @@ public class Cat_UI : MonoBehaviour
         }
         
     }
+    
     
     
 }

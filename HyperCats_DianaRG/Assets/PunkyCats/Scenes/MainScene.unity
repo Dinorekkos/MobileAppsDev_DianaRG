@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &84202932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2282668776614767587, guid: c97d21f1bcaa67b408dda4ca8af19bd9, type: 3}
+  m_PrefabInstance: {fileID: 1682858207}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ee33d4e70b3cf469d1a8631d7f8975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &144571963
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetReferenceManager: {fileID: 1000301355}
+  _savedCatData: {fileID: 11400000, guid: 9924fdeb3c569404dbee320a99d0de72, type: 2}
   commonSavedSO: {fileID: 11400000, guid: ff13813a0edc03f4282faf5c75da82fe, type: 2}
   premiumSavedSO: {fileID: 11400000, guid: 178b92eca2cf7444992de73e0c2e4913, type: 2}
   gachaSavedSO: {fileID: 11400000, guid: 4d81b0d3925731047a9bc5143f2dc070, type: 2}
@@ -1878,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e100e0ffd2aa07940886506cfe18ca9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CatUI: {fileID: 84202932}
   itemPrefab: {fileID: 6631266157654370431, guid: c1d189881d1ab1d44847959ab9c9337d, type: 3}
   contentPanel: {fileID: 1370494117}
   defaultFilter: 1

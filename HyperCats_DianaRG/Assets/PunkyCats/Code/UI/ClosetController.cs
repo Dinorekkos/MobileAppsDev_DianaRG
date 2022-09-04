@@ -6,10 +6,18 @@ using UnityEngine;
 
 public class ClosetController : MonoBehaviour
 {
+
+    public static ClosetController Instance;
+    public Cat_UI CatUI;
     [SerializeField] private AssetViwer itemPrefab;
     [SerializeField] private RectTransform contentPanel;
     [SerializeField] private AssetType defaultFilter = AssetType.Skin;
     [SerializeField] List<AssetViwer> itemsDisplayed;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -62,9 +70,11 @@ public class ClosetController : MonoBehaviour
 
             Asset_SO assetSo = filteredAssets[i];
             assetViwer.myAsset_Data = assetSo;
-            assetViwer.CatUI.SetAssetViwer(assetSo.AssetType, assetSo.Sprite);
+            assetViwer.myCatUI.SetAssetViwer(assetSo.AssetType, assetSo.Sprite);
         }
         
     }
 
+    
+    
 }
