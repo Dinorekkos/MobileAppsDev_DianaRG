@@ -103,7 +103,7 @@ public class Cat_UI : MonoBehaviour
         }
     }
 
-    void ResetAssets()
+   public void ResetAssets()
     {
         for (int i = 0; i < myRenderersImages.Length; i++)
         {

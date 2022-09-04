@@ -27,6 +27,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/Interactions/GachaController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/Save/Currency_SO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/AssetViwer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/ClosetController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Currency_UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Gacha_UI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -101,7 +102,7 @@
       <workItem from="1662155930583" duration="10076000" />
       <workItem from="1662166622369" duration="14833000" />
       <workItem from="1662232266807" duration="7929000" />
-      <workItem from="1662240900390" duration="9090000" />
+      <workItem from="1662240900390" duration="10925000" />
     </task>
     <servers />
   </component>

@@ -13,7 +13,8 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private Currency_SO commonSavedSO;
     [SerializeField] private Currency_SO premiumSavedSO;
     [SerializeField] private Currency_SO gachaSavedSO;
-    
+
+    public Action OnUnlockAsset;
     public int CommonCurrency
     {
         get { return commonSavedSO.SavedCurrency; }
@@ -112,7 +113,13 @@ public class SaveManager : MonoBehaviour
         }
         Debug.Log("Unlocked Count = " + _unlockAssets.Count);
         Debug.Log("Locked Count = " + _lockedAssets.Count);
+        
+        OnUnlockAsset?.Invoke();
     }
+
+    
+
+    #region Editor
     
     public void ResetAllAssets()
     {
@@ -152,7 +159,7 @@ public class SaveManager : MonoBehaviour
         }
 
     }
-
+    #endregion
 }
 
 [CustomEditor(typeof(SaveManager))]
