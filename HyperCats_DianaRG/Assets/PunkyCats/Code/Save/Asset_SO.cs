@@ -2,6 +2,7 @@
 namespace DinoFramework
 {
     [CreateAssetMenu(menuName = "DinoFramework/Asset", fileName = "AssetData")]
+    [System.Serializable]
     public class Asset_SO : ScriptableObject
     {
 
