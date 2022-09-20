@@ -8,23 +8,23 @@ namespace DinoFramework
     [CreateAssetMenu(menuName = "DinoFramework/AssetsContainer", fileName = "AssetReferenceData")]
     public class AssetReference_Data : ScriptableObject
     {
-        private static AssetReference_Data instance;
+        // private static AssetReference_Data instance;
 
-        public static AssetReference_Data Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = Resources.Load<AssetReference_Data>("AssetReferenceData");
-                    
-                    if (instance == null)
-                        Debug.LogError ($"AssetReferencesData doesn't exist in Resources");
-                }
-
-                return instance;
-            }
-        }
+        // public static AssetReference_Data Instance
+        // {
+        //     get
+        //     {
+        //         if (instance == null)
+        //         {
+        //             instance = Resources.Load<AssetReference_Data>("AssetReferenceData");
+        //             
+        //             if (instance == null)
+        //                 Debug.LogError ($"AssetReferencesData doesn't exist in Resources");
+        //         }
+        //
+        //         return instance;
+        //     }
+        // }
         
         
         
@@ -35,8 +35,6 @@ namespace DinoFramework
             get => allAssetsList;
         }
         
-        // private List<Asset_SO> _blockAssetsList;
-        // private List<Asset_SO> _unblockAssetsList;
 
     }
 }

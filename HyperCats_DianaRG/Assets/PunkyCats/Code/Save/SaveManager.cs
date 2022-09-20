@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using DinoFramework;
 using UnityEngine;
 using UnityEditor;
+using PunkyCats.Code;
+using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
@@ -77,8 +79,12 @@ public class SaveManager : MonoBehaviour
         _loadAssets = new List<Asset_SO>();
         _unlockAssets = new List<Asset_SO>();
         _lockedAssets = new List<Asset_SO>();
-        _loadAssets = assetReferenceManager.AssetReferenceData.AllAssets;
+        // _loadAssets = assetReferenceManager.AssetReferenceData.AllAssets;
 
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        _loadAssets = json.LoadAssets;
+        
+        
         foreach (Asset_SO  asset in _loadAssets)
         {
             if (asset.IsUnlocked)
@@ -170,29 +176,29 @@ public class SaveManager : MonoBehaviour
     #endregion
 }
 
-// [CustomEditor(typeof(SaveManager))]
-// public class SaveManagerEditor : Editor
-// {
-//     public override void OnInspectorGUI()
-//     {
-//         DrawDefaultInspector();
-//         SaveManager saveManager = target as SaveManager;
-//         
-//         if (GUILayout.Button("Reset Assets"))
-//         {
-//             saveManager.ResetAllAssets();
-//         }  
-//         if (GUILayout.Button("Reset Currency"))
-//         {
-//             saveManager.ResetAllCurrency();
-//         }
-//         if (GUILayout.Button("Give Test Currency"))
-//         {
-//             saveManager.GiveTestCurrency();
-//         }
-//         if (GUILayout.Button("Give All Assets"))
-//         {
-//             saveManager.UnLockAllAssets();
-//         }
-//     }
-// }
+[CustomEditor(typeof(SaveManager))]
+public class SaveManagerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+        SaveManager saveManager = target as SaveManager;
+        
+        if (GUILayout.Button("Reset Assets"))
+        {
+            saveManager.ResetAllAssets();
+        }  
+        if (GUILayout.Button("Reset Currency"))
+        {
+            saveManager.ResetAllCurrency();
+        }
+        if (GUILayout.Button("Give Test Currency"))
+        {
+            saveManager.GiveTestCurrency();
+        }
+        if (GUILayout.Button("Give All Assets"))
+        {
+            saveManager.UnLockAllAssets();
+        }
+    }
+}

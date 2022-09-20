@@ -25,6 +25,7 @@ namespace DinoFramework
        public string ID
        {
            get => _id;
+           set => _id = value;
        }
 
        public AssetType AssetType

@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d2908611-a987-4224-a099-184261f25e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetReferenceManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetReferenceManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Cat_Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Cat_Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetReference_Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/AssetReference_Data.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/Asset_SO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/Asset_SO.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/MemoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/MemoryManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/SaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/MemoryManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/JSON_Controller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/MemoryManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/JSON_Controller.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SaveCats.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/StreamingAssets/SaveCats.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/AndroidLogcatSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/AndroidLogcatSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +25,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/ClosetController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Currency_UI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Gacha_UI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Data/MemoryManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PunkyCats/Data/JSON_Controller.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/StreamingAssets/SaveAssetsData.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
   </component>
   <component name="ProjectId" id="2DgKeuRdyLKtJbdYN2WrUSGoFAr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,20 +61,20 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6768">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6768" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6768">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6768" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -101,6 +105,8 @@
       <workItem from="1662240900390" duration="25024000" />
       <workItem from="1663018233231" duration="1079000" />
       <workItem from="1663108414166" duration="4920000" />
+      <workItem from="1663711944910" duration="36000" />
+      <workItem from="1663712039741" duration="5471000" />
     </task>
     <servers />
   </component>

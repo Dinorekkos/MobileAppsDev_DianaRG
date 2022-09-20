@@ -6,16 +6,22 @@ using System;
 using DinoFramework;
 using PunkyCats.Code;
 
-public class MemoryManager : MonoBehaviour
+public class JSON_Controller : MonoBehaviour
 {
     public AssetReference_Data assetReferenceData;
+    public Cat_Data catData;
+    
+   [HideInInspector] public List<Asset_SO> LoadAssets;
+   [HideInInspector] public string path_SaveAssets;
+   [HideInInspector] public string path_SaveCatData;
+    
+    private string JSON; 
     private List<Save_AssetSO> savesList;
 
-    public string path_SaveAssets;
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         path_SaveAssets = Application.streamingAssetsPath + "/SaveAssetsData.json";
+        path_SaveCatData = Application.streamingAssetsPath + "/SaveCatData.json";
         savesList = new List<Save_AssetSO>();
         
         if (!File.Exists( path_SaveAssets))
@@ -26,17 +32,22 @@ public class MemoryManager : MonoBehaviour
         else
         {
             string json = File.ReadAllText(path_SaveAssets);
-            LoadSaveAssets(json);
+            JSON = json;
+            LoadSaveAssets(JSON);
             Debug.Log("Load Json");
 
         }
-        
-        
-        
 
-       
-      
-        // string json = File.ReadAllText(path);
+        if (!File.Exists(path_SaveCatData))
+        {
+            CreatSaveCatDataJSON();
+        }
+        else
+        {
+            
+        }
+        
+         // string json = File.ReadAllText(path);
         // CatObject catObject = JsonUtility.FromJson<CatObject>(json);
         // print(catObject.description);
         // CatObject[] catObjects; /*= new CatObject[2];
@@ -53,7 +64,13 @@ public class MemoryManager : MonoBehaviour
 
     }
 
+    void CreatSaveCatDataJSON()
+    {
+        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
 
+        string[] catDataAssetsIDS = { catData.catSkin_Data.ID, catData.catEyes_Data.ID , "","","","","", ""};
+
+    }
     void CreateSaveAssetsJSON()
     {
         
@@ -70,18 +87,33 @@ public class MemoryManager : MonoBehaviour
         File.WriteAllText(path, assetReference);
     }
 
-    void LoadSaveAssets(string json)
+    public void LoadSaveAssets(string json)
     {
+        LoadAssets = new List<Asset_SO>();
+       
         Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(json);
 
-        // print(saves);
         for (int i = 0; i < saves.Length; i++)
         {
-            print(saves[i]._id);
+            assetReferenceData.AllAssets[i].ID = saves[i]._id;
+            assetReferenceData.AllAssets[i].IsUnlocked = saves[i]._isUnlocked;
+            
+            LoadAssets.Add(assetReferenceData.AllAssets[i]);
         }
-        // foreach (Asset_SO assetSo in assetReferenceData.AllAssets)
-        // {
-        // }
+    }
+
+    public void ChangeAssetValues(string assetID, bool newValue)
+    {
+        Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(JSON);
+
+        for (int i = 0; i < saves.Length; i++)
+        {
+            if (saves[i]._id == assetID)
+            {
+                saves[i]._isUnlocked = newValue;
+            }
+        }
+        
     }
   
 }
