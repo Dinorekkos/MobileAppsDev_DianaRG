@@ -163,6 +163,14 @@
         {
             "_id": "skin.9",
             "_isUnlocked": false
+        },
+        {
+            "_id": "eyes.default",
+            "_isUnlocked": true
+        },
+        {
+            "_id": "skin.default",
+            "_isUnlocked": true
         }
     ]
 }

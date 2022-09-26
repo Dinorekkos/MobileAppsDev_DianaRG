@@ -15,7 +15,8 @@ public class JSON_Controller : MonoBehaviour
    [HideInInspector] public string path_SaveAssets;
    [HideInInspector] public string path_SaveCatData;
     
-    private string JSON; 
+    private string JSON_Assets; 
+    private string JSON_CatData; 
     private List<Save_AssetSO> savesList;
 
     void Awake()
@@ -31,10 +32,10 @@ public class JSON_Controller : MonoBehaviour
         }
         else
         {
-            string json = File.ReadAllText(path_SaveAssets);
-            JSON = json;
-            LoadSaveAssets(JSON);
-            Debug.Log("Load Json");
+            string json_aseets = File.ReadAllText(path_SaveAssets);
+            JSON_Assets = json_aseets;
+            LoadSaveAssets(JSON_Assets);
+            Debug.Log("Load Json_Assets");
 
         }
 
@@ -44,33 +45,71 @@ public class JSON_Controller : MonoBehaviour
         }
         else
         {
+            string json_catData = File.ReadAllText(path_SaveCatData);
+            JSON_CatData = json_catData;
+            LoadCatDataJSON(JSON_CatData);
+            Debug.Log("Load Json_Cat");
             
         }
         
-         // string json = File.ReadAllText(path);
-        // CatObject catObject = JsonUtility.FromJson<CatObject>(json);
-        // print(catObject.description);
-        // CatObject[] catObjects; /*= new CatObject[2];
-        // catObjects[0] = new CatObject("Garfield", 15, false, "Me cagan los lunes");
-        // catObjects[1] = new CatObject("Scratchy", 4, true, "Muere!!!!!!");
-        // string json = JsonHelper.ToJson(catObjects, true);
-        //print(json);
-        //File.WriteAllText(path, json);
-        // string json = File.ReadAllText(path);
-        // catObjects = JsonHelper.FromJson<CatObject>(json);
-        // print (catObjects[1].name);
-
-
-
     }
 
     void CreatSaveCatDataJSON()
     {
-        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
+        string path = Application.streamingAssetsPath + "/SaveCatData.json";
 
         string[] catDataAssetsIDS = { catData.catSkin_Data.ID, catData.catEyes_Data.ID , "","","","","", ""};
-
+        string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true);
+        File.WriteAllText(path,catDataReference);
     }
+
+    void LoadCatDataJSON(string json)
+    {
+        string[] catDataJSON = JsonHelper.FromJson<string>(json);
+
+        Asset_SO findableAsset;
+        
+        foreach (Asset_SO asset in LoadAssets)
+        {
+            for (int i = 0; i < catDataJSON.Length; i++)
+            {
+                if (catDataJSON[i] == asset.ID)
+                {
+                    findableAsset = asset;
+                    switch (findableAsset.AssetType)
+                    {
+                        case AssetType.Skin:
+                            catData.catSkin_Data = findableAsset;
+                            break;
+                        case AssetType.Eyes:
+                            catData.catEyes_Data = findableAsset;
+                            break;
+                        case AssetType.Hair:
+                            catData.catHair_Data = findableAsset;
+                            break;
+                        case AssetType.Head:
+                            catData.catHead_Data = findableAsset;
+                            break;
+                        case AssetType.Chest:
+                            catData.catChest_Data = findableAsset;
+                            break;
+                        case AssetType.Pants:
+                            catData.catPants_Data = findableAsset;
+                            break;
+                        case AssetType.Tail:
+                            catData.catTail_Data = findableAsset;
+                            break;
+                        case AssetType.Shoes:
+                            catData.catShoes_Data = findableAsset;
+                            break;
+                    }
+                }
+            } 
+        }
+        
+    }
+
+    
     void CreateSaveAssetsJSON()
     {
         
@@ -104,7 +143,7 @@ public class JSON_Controller : MonoBehaviour
 
     public void ChangeAssetValues(string assetID, bool newValue)
     {
-        Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(JSON);
+        Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(JSON_Assets);
 
         for (int i = 0; i < saves.Length; i++)
         {
