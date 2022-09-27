@@ -18,6 +18,7 @@ public class JSON_Controller : MonoBehaviour
     private string JSON_Assets; 
     private string JSON_CatData; 
     private List<Save_AssetSO> savesList;
+    // private Asset_SO[] datas;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class JSON_Controller : MonoBehaviour
         {
             string json_aseets = File.ReadAllText(path_SaveAssets);
             JSON_Assets = json_aseets;
+            
             LoadSaveAssets(JSON_Assets);
             Debug.Log("Load Json_Assets");
 
@@ -47,7 +49,8 @@ public class JSON_Controller : MonoBehaviour
         {
             string json_catData = File.ReadAllText(path_SaveCatData);
             JSON_CatData = json_catData;
-            LoadCatDataJSON(JSON_CatData);
+            // LoadCatDataJSON(JSON_CatData);
+            SetCatDataChanges(JSON_CatData);
             Debug.Log("Load Json_Cat");
             
         }
@@ -58,13 +61,15 @@ public class JSON_Controller : MonoBehaviour
     {
         string path = Application.streamingAssetsPath + "/SaveCatData.json";
 
-        string[] catDataAssetsIDS = { catData.catSkin_Data.ID, catData.catEyes_Data.ID , "","","","","", ""};
+        string[] catDataAssetsIDS = { catData.catSkin_ID, catData.catEyes_ID, "","","","","", ""};
         string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true);
         File.WriteAllText(path,catDataReference);
     }
 
+    
     void LoadCatDataJSON(string json)
     {
+        
         string[] catDataJSON = JsonHelper.FromJson<string>(json);
 
         Asset_SO findableAsset;
@@ -73,6 +78,9 @@ public class JSON_Controller : MonoBehaviour
         {
             for (int i = 0; i < catDataJSON.Length; i++)
             {
+                string ID = catDataJSON[i];
+                if (String.IsNullOrEmpty(ID)) i++;
+                
                 if (catDataJSON[i] == asset.ID)
                 {
                     findableAsset = asset;
@@ -104,6 +112,7 @@ public class JSON_Controller : MonoBehaviour
                             break;
                     }
                 }
+                    
             } 
         }
         
@@ -126,6 +135,34 @@ public class JSON_Controller : MonoBehaviour
         File.WriteAllText(path, assetReference);
     }
 
+    public void SetCatDataChanges(string json)
+    {
+        string path = Application.streamingAssetsPath + "/SaveCatData.json";
+
+        string[] catDataAssetsIDS = { 
+            catData.catSkin_ID,
+            catData.catEyes_ID,
+            catData.catPants_ID,
+            catData.catChest_ID,
+            catData.catHead_ID,
+            catData.catHair_ID,
+            catData.catTail_ID,
+            catData.catShoes_ID
+        };
+
+        // string[] newDatasIDS = {"","","","","","","",""};
+        //
+        // for (int i = 0; i < catDataAssetsIDS.Length; i++)
+        // {
+        //     string ID = catDataAssetsIDS[i];
+        //     newDatasIDS[i] = ID;
+        // }
+
+        string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true); 
+
+        File.WriteAllText(path,catDataReference);
+
+    }
     public void LoadSaveAssets(string json)
     {
         LoadAssets = new List<Asset_SO>();

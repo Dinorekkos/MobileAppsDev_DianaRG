@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CatData
   m_EditorClassIdentifier: 
   catSkin_Data: {fileID: 11400000, guid: 579383fc3aa57cd4590e9cde4600c45e, type: 2}
-  catEyes_Data: {fileID: 11400000, guid: 94f4507a3074fe14bb38b7df073d9569, type: 2}
+  catEyes_Data: {fileID: 0}
   catPants_Data: {fileID: 0}
   catChest_Data: {fileID: 0}
   catHead_Data: {fileID: 0}
