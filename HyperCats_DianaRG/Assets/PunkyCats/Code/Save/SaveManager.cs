@@ -30,25 +30,43 @@ public class SaveManager : MonoBehaviour
     public int CommonCurrency
     {
         get { return commonSavedSO.SavedCurrency; }
-        set { commonSavedSO.SavedCurrency = value; }
+        set
+        {
+            commonSavedSO.SavedCurrency = value;
+            JSON_Controller json = GetComponent<JSON_Controller>();
+            json.UpdateCurrency(commonSavedSO.ID, commonSavedSO.SavedCurrency);
+        }
     }
 
     public int PremiumCurrency
     {
         get { return premiumSavedSO.SavedCurrency; }
-        set { premiumSavedSO.SavedCurrency = value; }
+        set
+        {
+            premiumSavedSO.SavedCurrency = value;
+
+            JSON_Controller json = GetComponent<JSON_Controller>();
+            json.UpdateCurrency(premiumSavedSO.ID, premiumSavedSO.SavedCurrency);
+            
+        }
     }
 
     public int GachaCurrency
     {
         get { return gachaSavedSO.SavedCurrency; }
-        set { gachaSavedSO.SavedCurrency = value; }
+        set
+        {
+            gachaSavedSO.SavedCurrency = value; 
+            JSON_Controller json = GetComponent<JSON_Controller>();
+            json.UpdateCurrency(gachaSavedSO.ID, gachaSavedSO.SavedCurrency);
+        }
     }
     
     [SerializeField] private List<Asset_SO> _loadAssets;
     [SerializeField] private List<Asset_SO> _unlockAssets;
     [SerializeField] private List<Asset_SO> _lockedAssets;
-    
+
+
     public List<Asset_SO> UnlockedAssets
     {
         get => _unlockAssets;
@@ -69,7 +87,6 @@ public class SaveManager : MonoBehaviour
         Instance = this;
         
     }
-    
 
     private void Start()
     {
@@ -101,14 +118,7 @@ public class SaveManager : MonoBehaviour
         
         OnFinishedLoadingAssets?.Invoke();
     }
-
-    public void RemoveAsset(int removeObject, List<Asset_SO> fromList)
-    {
-        Asset_SO removedAsset = fromList[removeObject];
-        fromList.Remove(removedAsset);
-        UpdateLists();
-    }
-
+    
     public void UpdateLists()
     {
         _unlockAssets = new List<Asset_SO>();
@@ -186,6 +196,8 @@ public class SaveManager : MonoBehaviour
         CommonCurrency = 0;
         PremiumCurrency = 0;
         GachaCurrency = 0;
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.CreateSaveCurrencyJSON();
     }
     
     public void GiveTestCurrency()
@@ -241,7 +253,5 @@ public class SaveManagerEditor : Editor
             saveManager.UnLockAllAssets();
         }
 
-       
-        
     }
 }

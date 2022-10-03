@@ -8,6 +8,7 @@ namespace DinoFramework
     {
         [SerializeField] private CurrencyType _currencyType;
         [SerializeField] private int saveCurrency;
+        [SerializeField] private string id;
 
         public int SavedCurrency
         {
@@ -18,6 +19,12 @@ namespace DinoFramework
         public CurrencyType MyCurrencyType
         {
             get { return _currencyType; }
+        }
+
+        public string ID
+        {
+            get => id;
+            set => id = value;
         }
     }
 }

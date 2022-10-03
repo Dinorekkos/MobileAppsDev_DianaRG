@@ -8,16 +8,22 @@ using PunkyCats.Code;
 
 public class JSON_Controller : MonoBehaviour
 {
+    [Header("Datas")]
     public AssetReference_Data assetReferenceData;
     public Cat_Data catData;
-    
+    public List<Currency_SO> currenciesData;
+
    [HideInInspector] public List<Asset_SO> LoadAssets;
     private string path_SaveAssets;
     private string path_SaveCatData;
+    private string path_SaveCurrencyData;
     
     private string JSON_Assets; 
     private string JSON_CatData; 
-    private List<Save_AssetSO> savesList;
+    private string JSON_CurrencyData; 
+    private List<Save_AssetSO> _savesAssetsList;
+    private List<Save_CurrencySO> _savesCurrencyList;
+    private List<Currency_SO> _loadCurrencies;
 
     public string MyCatDataJSON
     {
@@ -29,6 +35,7 @@ public class JSON_Controller : MonoBehaviour
     {
         path_SaveAssets = Application.streamingAssetsPath + "/SaveAssetsData.json";
         path_SaveCatData = Application.streamingAssetsPath + "/SaveCatData.json";
+        path_SaveCurrencyData = Application.streamingAssetsPath + "/SaveCurrencyData.json";
         
         if (!File.Exists( path_SaveAssets))
         {
@@ -55,8 +62,20 @@ public class JSON_Controller : MonoBehaviour
             JSON_CatData = json_catData;
             LoadCatDataJSON(JSON_CatData);
             Debug.Log("Load Json_Cat");
+        }
+
+        if (!File.Exists(path_SaveCurrencyData))
+        {
+            CreateSaveCurrencyJSON();
+        }
+        else
+        {
+            string json_currencyData = File.ReadAllText(path_SaveCurrencyData);
+            JSON_CurrencyData = json_currencyData;
+            LoadSaveCurrency(JSON_CurrencyData);
             
         }
+        
         
     }
 
@@ -68,9 +87,40 @@ public class JSON_Controller : MonoBehaviour
         string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true);
         File.WriteAllText(path,catDataReference);
     }
+    public void CreateSaveAssetsJSON()
+    {
+        _savesAssetsList = new List<Save_AssetSO>();
+        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
+        foreach (Asset_SO assetSo in assetReferenceData.AllAssets)
+        {
+            Save_AssetSO saveAsset = new Save_AssetSO( assetSo.ID, assetSo.IsUnlocked);
+            _savesAssetsList.Add(saveAsset);
+            print(saveAsset._id);
+        }
+        string assetReference = JsonHelper.ToJson(_savesAssetsList.ToArray(), true);
+        print(assetReference);
+
+        File.WriteAllText(path, assetReference);
+    }
+
+    public void CreateSaveCurrencyJSON()
+    {
+        _savesCurrencyList = new List<Save_CurrencySO>();
+        foreach (Currency_SO currencySo in currenciesData)
+        {
+            Save_CurrencySO saveCurrency = new Save_CurrencySO(currencySo.ID, currencySo.SavedCurrency);
+            _savesCurrencyList.Add(saveCurrency);
+            print(saveCurrency);
+        }
+
+        string currencyData = JsonHelper.ToJson(_savesCurrencyList.ToArray(), true);
+        print(currencyData);
+        
+        File.WriteAllText(path_SaveCurrencyData, currencyData);
+    }
 
     
-    void LoadCatDataJSON(string json)
+    public void LoadCatDataJSON(string json)
     {
         
         string[] catDataJSON = JsonHelper.FromJson<string>(json);
@@ -120,24 +170,32 @@ public class JSON_Controller : MonoBehaviour
         }
         
     }
-
-    
-    public void CreateSaveAssetsJSON()
+    public void LoadSaveAssets(string json)
     {
-        savesList = new List<Save_AssetSO>();
-        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
-        foreach (Asset_SO assetSo in assetReferenceData.AllAssets)
-        {
-            Save_AssetSO saveAsset = new Save_AssetSO( assetSo.ID, assetSo.IsUnlocked);
-            savesList.Add(saveAsset);
-            print(saveAsset._id);
-        }
-        string assetReference = JsonHelper.ToJson(savesList.ToArray(), true);
-        print(assetReference);
+        LoadAssets = new List<Asset_SO>();
+       
+        Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(json);
 
-        File.WriteAllText(path, assetReference);
+        for (int i = 0; i < saves.Length; i++)
+        {
+            assetReferenceData.AllAssets[i].ID = saves[i]._id;
+            assetReferenceData.AllAssets[i].IsUnlocked = saves[i]._isUnlocked;
+            
+            LoadAssets.Add(assetReferenceData.AllAssets[i]);
+        }
     }
 
+    public void LoadSaveCurrency(string json)
+    {
+        _loadCurrencies = new List<Currency_SO>();
+        Save_CurrencySO[] savesCurrencies = JsonHelper.FromJson<Save_CurrencySO>(json);
+        for (int i = 0; i < savesCurrencies.Length; i++)
+        {
+            currenciesData[i].ID = savesCurrencies[i]._id;
+            currenciesData[i].SavedCurrency = savesCurrencies[i]._currencyAmount;
+        }
+
+    }
     public void SetCatDataChanges(string json)
     {
         string path = Application.streamingAssetsPath + "/SaveCatData.json";
@@ -159,21 +217,6 @@ public class JSON_Controller : MonoBehaviour
         File.WriteAllText(path,catDataReference);
 
     }
-    public void LoadSaveAssets(string json)
-    {
-        LoadAssets = new List<Asset_SO>();
-       
-        Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(json);
-
-        for (int i = 0; i < saves.Length; i++)
-        {
-            assetReferenceData.AllAssets[i].ID = saves[i]._id;
-            assetReferenceData.AllAssets[i].IsUnlocked = saves[i]._isUnlocked;
-            
-            LoadAssets.Add(assetReferenceData.AllAssets[i]);
-        }
-    }
-
     public void ChangeAssetValues(string assetID, bool newValue)
     {
         string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
@@ -191,6 +234,24 @@ public class JSON_Controller : MonoBehaviour
         string assetReference = JsonHelper.ToJson(saves, true);
         File.WriteAllText(path,assetReference);
         
+    }
+
+    public void UpdateCurrency(string currencyID, int newAmount)
+    {
+        string path = Application.streamingAssetsPath + "/SaveCurrencyData.json";
+        string json_currencyData = File.ReadAllText(path);
+        Save_CurrencySO[] saveCurrency = JsonHelper.FromJson<Save_CurrencySO>(json_currencyData);
+        for (int i = 0; i < saveCurrency.Length; i++)
+        {
+            if (saveCurrency[i]._id == currencyID)
+            {
+                saveCurrency[i]._currencyAmount = newAmount;
+            }
+        }
+
+        string currencyData = JsonHelper.ToJson(saveCurrency, true);
+        File.WriteAllText(path, currencyData);
+        print("Se actauliza currency json");
     }
   
 }

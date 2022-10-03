@@ -82,7 +82,7 @@
         },
         {
             "_id": "tail.2",
-            "_isUnlocked": true
+            "_isUnlocked": false
         },
         {
             "_id": "tail.3",

@@ -1,0 +1,16 @@
+{
+    "Items": [
+        {
+            "_id": "common.currency",
+            "_currencyAmount": 0
+        },
+        {
+            "_id": "gacha.currency",
+            "_currencyAmount": 0
+        },
+        {
+            "_id": "premium.currency",
+            "_currencyAmount": 0
+        }
+    ]
+}

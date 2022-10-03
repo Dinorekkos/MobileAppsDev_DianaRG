@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currencyType: 3
   saveCurrency: 0
+  id: gacha.currency

@@ -12,7 +12,8 @@ namespace DinoFramework
         {
             Instance = this;
         }
-        
+
+
         public void AddCurrency(int cuantity, CurrencyType type)
         {
             switch (type)

@@ -459,6 +459,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetReferenceData: {fileID: 11400000, guid: a93d4dd278b227e4796c263813a2a92f, type: 2}
   catData: {fileID: 11400000, guid: 9924fdeb3c569404dbee320a99d0de72, type: 2}
+  currenciesData:
+  - {fileID: 11400000, guid: ff13813a0edc03f4282faf5c75da82fe, type: 2}
+  - {fileID: 11400000, guid: 4d81b0d3925731047a9bc5143f2dc070, type: 2}
+  - {fileID: 11400000, guid: 178b92eca2cf7444992de73e0c2e4913, type: 2}
   LoadAssets: []
 --- !u!1 &1042373942
 GameObject:
