@@ -49,15 +49,17 @@ public class GachaController : MonoBehaviour
 
     private Asset_SO SelectRandomAsset()
     {
-        Asset_SO selectedAsset = null;
-        
+        lockedAssets = SaveManager.Instance.LockedAssets;
         int random = Random.Range(0, lockedAssets.Count);
         
-        Debug.Log(random);
-        
-        selectedAsset = lockedAssets[random];
+        Asset_SO  selectedAsset = lockedAssets[random];
+        if (selectedAsset.ID == "eyes.default" || selectedAsset.ID == "skin.default" )
+        {
+            selectedAsset = SelectRandomAsset();
+        }
         selectedAsset.IsUnlocked = true;
         
+        SaveManager.Instance.SaveAssetChanges(selectedAsset.ID, true);
         SaveManager.Instance.UpdateLists();
 
         return selectedAsset;

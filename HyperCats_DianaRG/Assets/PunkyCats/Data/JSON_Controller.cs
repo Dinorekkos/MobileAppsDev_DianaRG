@@ -12,19 +12,23 @@ public class JSON_Controller : MonoBehaviour
     public Cat_Data catData;
     
    [HideInInspector] public List<Asset_SO> LoadAssets;
-   [HideInInspector] public string path_SaveAssets;
-   [HideInInspector] public string path_SaveCatData;
+    private string path_SaveAssets;
+    private string path_SaveCatData;
     
     private string JSON_Assets; 
     private string JSON_CatData; 
     private List<Save_AssetSO> savesList;
-    // private Asset_SO[] datas;
 
+    public string MyCatDataJSON
+    {
+        get => JSON_CatData;
+    }
+    
+    
     void Awake()
     {
         path_SaveAssets = Application.streamingAssetsPath + "/SaveAssetsData.json";
         path_SaveCatData = Application.streamingAssetsPath + "/SaveCatData.json";
-        savesList = new List<Save_AssetSO>();
         
         if (!File.Exists( path_SaveAssets))
         {
@@ -49,15 +53,14 @@ public class JSON_Controller : MonoBehaviour
         {
             string json_catData = File.ReadAllText(path_SaveCatData);
             JSON_CatData = json_catData;
-            // LoadCatDataJSON(JSON_CatData);
-            SetCatDataChanges(JSON_CatData);
+            LoadCatDataJSON(JSON_CatData);
             Debug.Log("Load Json_Cat");
             
         }
         
     }
 
-    void CreatSaveCatDataJSON()
+    public void CreatSaveCatDataJSON()
     {
         string path = Application.streamingAssetsPath + "/SaveCatData.json";
 
@@ -119,9 +122,9 @@ public class JSON_Controller : MonoBehaviour
     }
 
     
-    void CreateSaveAssetsJSON()
+    public void CreateSaveAssetsJSON()
     {
-        
+        savesList = new List<Save_AssetSO>();
         string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
         foreach (Asset_SO assetSo in assetReferenceData.AllAssets)
         {
@@ -150,13 +153,6 @@ public class JSON_Controller : MonoBehaviour
             catData.catShoes_ID
         };
 
-        // string[] newDatasIDS = {"","","","","","","",""};
-        //
-        // for (int i = 0; i < catDataAssetsIDS.Length; i++)
-        // {
-        //     string ID = catDataAssetsIDS[i];
-        //     newDatasIDS[i] = ID;
-        // }
 
         string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true); 
 
@@ -180,6 +176,8 @@ public class JSON_Controller : MonoBehaviour
 
     public void ChangeAssetValues(string assetID, bool newValue)
     {
+        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
+
         Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(JSON_Assets);
 
         for (int i = 0; i < saves.Length; i++)
@@ -189,6 +187,9 @@ public class JSON_Controller : MonoBehaviour
                 saves[i]._isUnlocked = newValue;
             }
         }
+        
+        string assetReference = JsonHelper.ToJson(saves, true);
+        File.WriteAllText(path,assetReference);
         
     }
   

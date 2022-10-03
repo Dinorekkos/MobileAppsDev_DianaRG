@@ -13,6 +13,8 @@ public class SaveManager : MonoBehaviour
     public AssetReferenceManager assetReferenceManager;
 
     [SerializeField] private Cat_Data _savedCatData;
+    [SerializeField] private Asset_SO defaultSkin;
+    [SerializeField] private Asset_SO defaultEyes;
 
     [SerializeField] private Currency_SO commonSavedSO;
     [SerializeField] private Currency_SO premiumSavedSO;
@@ -112,18 +114,20 @@ public class SaveManager : MonoBehaviour
         _unlockAssets = new List<Asset_SO>();
         _lockedAssets = new List<Asset_SO>();
         
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        _loadAssets = json.LoadAssets;
+        
         foreach (Asset_SO  asset in _loadAssets)
         {
             if (asset.IsUnlocked)
             {
                 _unlockAssets.Add(asset);
-                // Debug.Log(asset.ID);
             }
             else
             {
                 _lockedAssets.Add(asset);
-                // Debug.Log(asset.ID);
             }
+
         }
         Debug.Log("Unlocked Count = " + _unlockAssets.Count);
         Debug.Log("Locked Count = " + _lockedAssets.Count);
@@ -131,10 +135,38 @@ public class SaveManager : MonoBehaviour
         OnUnlockAsset?.Invoke();
     }
 
+    public void SaveCatDataChanges()
+    {
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.SetCatDataChanges(json.MyCatDataJSON);
+    }
     
+    public void SaveAssetChanges(string assetID, bool value)
+    {
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.ChangeAssetValues(assetID,value);
+    }
+
 
     #region Editor
     
+    public void ResetCatData()
+    {
+        Debug.Log("Reset Cat Data");
+
+        _savedCatData.catEyes_Data = defaultEyes;
+        _savedCatData.catSkin_Data = defaultSkin;
+        _savedCatData.catShoes_Data = null;
+        _savedCatData.catHair_Data = null;
+        _savedCatData.catPants_Data = null;
+        _savedCatData.catChest_Data = null;
+        _savedCatData.catTail_Data = null;
+        _savedCatData.catShoes_Data = null;
+        _savedCatData.catHead_Data = null;
+
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.CreatSaveCatDataJSON();
+    }
     public void ResetAllAssets()
     {
         Debug.Log("Reset Assets");
@@ -143,7 +175,8 @@ public class SaveManager : MonoBehaviour
         {
             asset.IsUnlocked = false;
         }
-        
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.CreateSaveAssetsJSON();
     }
 
     public void ResetAllCurrency()
@@ -170,6 +203,8 @@ public class SaveManager : MonoBehaviour
         foreach (Asset_SO  asset in assetReferenceManager.AssetReferenceData.AllAssets)
         {
             asset.IsUnlocked = true;
+            // JSON_Controller json = GetComponent<JSON_Controller>();
+            // json.ChangeAssetValues(asset.ID, true);
         }
 
     }
@@ -177,29 +212,36 @@ public class SaveManager : MonoBehaviour
 }
 
 
-// [CustomEditor(typeof(SaveManager))]
-// public class SaveManagerEditor : Editor
-// {
-    // public override void OnInspectorGUI()
-    // {
-        // DrawDefaultInspector();
-        // SaveManager saveManager = target as SaveManager;
+[CustomEditor(typeof(SaveManager))]
+public class SaveManagerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+        SaveManager saveManager = target as SaveManager;
         
-        // if (GUILayout.Button("Reset Assets"))
-        // {
-            // saveManager.ResetAllAssets();
-        // }  
-        // if (GUILayout.Button("Reset Currency"))
-        // {
-            // saveManager.ResetAllCurrency();
-        // }
-        // if (GUILayout.Button("Give Test Currency"))
-        // {
-            // saveManager.GiveTestCurrency();
-        // }
-        // if (GUILayout.Button("Give All Assets"))
-        // {
-            // saveManager.UnLockAllAssets();
-        // }
-    // }
-// }
+        if (GUILayout.Button("Reset Cat Data"))
+        {
+            saveManager.ResetCatData();
+        }
+        if (GUILayout.Button("Reset Assets"))
+        {
+            saveManager.ResetAllAssets();
+        }  
+        if (GUILayout.Button("Reset Currency"))
+        {
+            saveManager.ResetAllCurrency();
+        }
+        if (GUILayout.Button("Give Test Currency"))
+        {
+            saveManager.GiveTestCurrency();
+        }
+        if (GUILayout.Button("Give All Assets"))
+        {
+            saveManager.UnLockAllAssets();
+        }
+
+       
+        
+    }
+}

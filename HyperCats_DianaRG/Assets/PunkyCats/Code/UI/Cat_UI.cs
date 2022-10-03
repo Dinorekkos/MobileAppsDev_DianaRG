@@ -96,6 +96,8 @@ public class Cat_UI : MonoBehaviour
                 }
             }
         }
+        
+        
     }
 
    public void ResetAssets()

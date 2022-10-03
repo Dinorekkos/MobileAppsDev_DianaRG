@@ -424,6 +424,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assetReferenceManager: {fileID: 1000301355}
   _savedCatData: {fileID: 11400000, guid: 9924fdeb3c569404dbee320a99d0de72, type: 2}
+  defaultSkin: {fileID: 11400000, guid: 579383fc3aa57cd4590e9cde4600c45e, type: 2}
+  defaultEyes: {fileID: 11400000, guid: 94f4507a3074fe14bb38b7df073d9569, type: 2}
   commonSavedSO: {fileID: 11400000, guid: ff13813a0edc03f4282faf5c75da82fe, type: 2}
   premiumSavedSO: {fileID: 11400000, guid: 178b92eca2cf7444992de73e0c2e4913, type: 2}
   gachaSavedSO: {fileID: 11400000, guid: 4d81b0d3925731047a9bc5143f2dc070, type: 2}
@@ -458,8 +460,6 @@ MonoBehaviour:
   assetReferenceData: {fileID: 11400000, guid: a93d4dd278b227e4796c263813a2a92f, type: 2}
   catData: {fileID: 11400000, guid: 9924fdeb3c569404dbee320a99d0de72, type: 2}
   LoadAssets: []
-  path_SaveAssets: 
-  path_SaveCatData: 
 --- !u!1 &1042373942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: InitializeInventoryUI
+      value: UpdateInventory
       objectReference: {fileID: 0}
     - target: {fileID: 3378308456322939120, guid: a79120f456da5dc47bf5445f6dd6d658, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName

@@ -82,7 +82,7 @@
         },
         {
             "_id": "tail.2",
-            "_isUnlocked": false
+            "_isUnlocked": true
         },
         {
             "_id": "tail.3",
@@ -166,11 +166,11 @@
         },
         {
             "_id": "eyes.default",
-            "_isUnlocked": true
+            "_isUnlocked": false
         },
         {
             "_id": "skin.default",
-            "_isUnlocked": true
+            "_isUnlocked": false
         }
     ]
 }

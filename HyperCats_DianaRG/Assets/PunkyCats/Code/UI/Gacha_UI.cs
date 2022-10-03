@@ -27,12 +27,16 @@ public class Gacha_UI : MonoBehaviour
 
     public void SpinGacha()
     {
-        if (CurrencyManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount))
+        if (SaveManager.Instance.LockedAssets.Count>=1)
         {
-            PopUpItem.SetActive(true);
-            assetViwer.LoadAsset(GachaController.Instance.ShowAssetUI());
+            if (CurrencyManager.Instance.SpendCurrency(CurrencyType.Gacha, gachaAmount))
+            {
+                PopUpItem.SetActive(true);
+                assetViwer.LoadAsset(GachaController.Instance.ShowAssetUI());
             
+            }  
         }
+        
     }
 
     public void ClosePopUpItem()

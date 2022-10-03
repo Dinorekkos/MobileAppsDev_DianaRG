@@ -60,6 +60,7 @@ public class AssetViwer : MonoBehaviour
             }
             
             ClosetController.Instance.CatUI.UpdateCatSprites();
+            SaveManager.Instance.SaveCatDataChanges();
         }
     }
     

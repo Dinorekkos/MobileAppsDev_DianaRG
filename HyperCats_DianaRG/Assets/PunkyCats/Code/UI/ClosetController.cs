@@ -36,6 +36,10 @@ public class ClosetController : MonoBehaviour
 
     }
 
+    public void UpdateInventory()
+    {
+        InitializeInventoryUI(defaultFilter);
+    }
 
     public void InitializeInventoryUI(AssetType filter)
     {
