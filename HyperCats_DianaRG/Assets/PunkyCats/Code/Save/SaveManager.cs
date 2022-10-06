@@ -224,34 +224,34 @@ public class SaveManager : MonoBehaviour
 }
 
 
-[CustomEditor(typeof(SaveManager))]
-public class SaveManagerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-        SaveManager saveManager = target as SaveManager;
-        
-        if (GUILayout.Button("Reset Cat Data"))
-        {
-            saveManager.ResetCatData();
-        }
-        if (GUILayout.Button("Reset Assets"))
-        {
-            saveManager.ResetAllAssets();
-        }  
-        if (GUILayout.Button("Reset Currency"))
-        {
-            saveManager.ResetAllCurrency();
-        }
-        if (GUILayout.Button("Give Test Currency"))
-        {
-            saveManager.GiveTestCurrency();
-        }
-        if (GUILayout.Button("Give All Assets"))
-        {
-            saveManager.UnLockAllAssets();
-        }
-
-    }
-}
+// [CustomEditor(typeof(SaveManager))]
+// public class SaveManagerEditor : Editor
+// {
+//     public override void OnInspectorGUI()
+//     {
+//         DrawDefaultInspector();
+//         SaveManager saveManager = target as SaveManager;
+//         
+//         if (GUILayout.Button("Reset Cat Data"))
+//         {
+//             saveManager.ResetCatData();
+//         }
+//         if (GUILayout.Button("Reset Assets"))
+//         {
+//             saveManager.ResetAllAssets();
+//         }  
+//         if (GUILayout.Button("Reset Currency"))
+//         {
+//             saveManager.ResetAllCurrency();
+//         }
+//         if (GUILayout.Button("Give Test Currency"))
+//         {
+//             saveManager.GiveTestCurrency();
+//         }
+//         if (GUILayout.Button("Give All Assets"))
+//         {
+//             saveManager.UnLockAllAssets();
+//         }
+//
+//     }
+// }
