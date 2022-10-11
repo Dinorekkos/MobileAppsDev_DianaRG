@@ -15,7 +15,7 @@ public class StoreSection : MonoBehaviour
     }
     void Start()
     {
-        
+        //commit para 0.2
     }
 
     // Update is called once per frame
