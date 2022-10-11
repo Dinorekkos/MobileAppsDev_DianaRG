@@ -134,8 +134,10 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.2
-  preloadedAssets: []
+  bundleVersion: 0.3
+  preloadedAssets:
+  - {fileID: 1784254433556418650, guid: f1c435defec4fee48bab532b82710450, type: 2}
+  - {fileID: 11400000, guid: db32461fab0cfdf48af33c55341d3434, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -253,7 +255,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Proyectos/Unity Projects/Universidad/5 Semestre/MobileApps/MobileAppsDev_DianaRG/KEY/PUNKY_USER.keystore
+  AndroidKeystoreName: C:/Users/Rojo15/Documents/Unity Projects/DINO/WEB/MobileAppsDev_DianaRG/KEY/PUNKY_USER.keystore
   AndroidKeyaliasName: punky
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
