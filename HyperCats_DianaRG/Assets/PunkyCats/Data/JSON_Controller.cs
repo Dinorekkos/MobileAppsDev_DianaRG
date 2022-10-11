@@ -33,9 +33,19 @@ public class JSON_Controller : MonoBehaviour
     
     void Awake()
     {
+#if UNITY_EDITOR
         path_SaveAssets = Application.streamingAssetsPath + "/SaveAssetsData.json";
         path_SaveCatData = Application.streamingAssetsPath + "/SaveCatData.json";
         path_SaveCurrencyData = Application.streamingAssetsPath + "/SaveCurrencyData.json";
+#endif
+        
+#if PLATFORM_ANDROID
+        path_SaveAssets = Application.persistentDataPath + "/SaveAssetsData.json";
+        path_SaveCatData = Application.persistentDataPath + "/SaveCatData.json";
+        path_SaveCurrencyData = Application.persistentDataPath + "/SaveCurrencyData.json";
+
+#endif
+        
         
         if (!File.Exists( path_SaveAssets))
         {
@@ -81,7 +91,14 @@ public class JSON_Controller : MonoBehaviour
 
     public void CreatSaveCatDataJSON()
     {
-        string path = Application.streamingAssetsPath + "/SaveCatData.json";
+        string path;
+#if UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/SaveCatData.json";
+#endif
+        
+#if PLATFORM_ANDROID
+         path = Application.persistentDataPath + "/SaveCatData.json";
+#endif
 
         string[] catDataAssetsIDS = { catData.catSkin_ID, catData.catEyes_ID, "","","","","", ""};
         string catDataReference = JsonHelper.ToJson(catDataAssetsIDS, true);
@@ -89,8 +106,17 @@ public class JSON_Controller : MonoBehaviour
     }
     public void CreateSaveAssetsJSON()
     {
+        string path;
+#if UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/SaveAssetsData.json";
+        #endif
+
+#if PLATFORM_ANDROID
+        path = Application.persistentDataPath + "/SaveAssetsData.json";
+        
+#endif
+        
         _savesAssetsList = new List<Save_AssetSO>();
-        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
         foreach (Asset_SO assetSo in assetReferenceData.AllAssets)
         {
             Save_AssetSO saveAsset = new Save_AssetSO( assetSo.ID, assetSo.IsUnlocked);
@@ -198,8 +224,14 @@ public class JSON_Controller : MonoBehaviour
     }
     public void SetCatDataChanges(string json)
     {
-        string path = Application.streamingAssetsPath + "/SaveCatData.json";
-
+        string path;
+#if UNITY_EDITOR
+         path = Application.streamingAssetsPath + "/SaveCatData.json";
+#endif
+#if PLATFORM_ANDROID
+        path = Application.persistentDataPath + "/SaveCatData.json";
+#endif
+        
         string[] catDataAssetsIDS = { 
             catData.catSkin_ID,
             catData.catEyes_ID,
@@ -219,8 +251,16 @@ public class JSON_Controller : MonoBehaviour
     }
     public void ChangeAssetValues(string assetID, bool newValue)
     {
-        string path = Application.streamingAssetsPath + "/SaveAssetsData.json";
 
+        string path;
+
+#if UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/SaveAssetsData.json";
+#endif
+
+#if PLATFORM_ANDROID
+        path = Application.persistentDataPath + "/SaveAssetsData.json";
+#endif
         Save_AssetSO[] saves = JsonHelper.FromJson<Save_AssetSO>(JSON_Assets);
 
         for (int i = 0; i < saves.Length; i++)
@@ -238,7 +278,14 @@ public class JSON_Controller : MonoBehaviour
 
     public void UpdateCurrency(string currencyID, int newAmount)
     {
-        string path = Application.streamingAssetsPath + "/SaveCurrencyData.json";
+        string path;
+
+#if UNITY_EDITOR
+        path = Application.streamingAssetsPath + "/SaveCurrencyData.json";
+#endif
+#if PLATFORM_ANDROID
+         path = Application.persistentDataPath + "/SaveCurrencyData.json";
+#endif
         string json_currencyData = File.ReadAllText(path);
         Save_CurrencySO[] saveCurrency = JsonHelper.FromJson<Save_CurrencySO>(json_currencyData);
         for (int i = 0; i < saveCurrency.Length; i++)
