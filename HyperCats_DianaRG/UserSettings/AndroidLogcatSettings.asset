@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "R5CT60XKTWL",
     "m_SelectedPackage": {
         "deviceId": "R5CT60XKTWL",
-        "name": "com.DefaultCompany.com.unity.template.mobile2D",
-        "processId": 10638,
+        "name": "com.PixiGrafix.PunkyCats",
+        "processId": 14080,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,31 +11,37 @@
         {
             "deviceId": "R5CT60XKTWL",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 1124,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.unity3d.mobileremote",
-            "processId": 4003,
-            "exited": false
-        },
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 9980,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R5CT60XKTWL",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 13308,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R5CT60XKTWL",
             "name": "com.DefaultCompany.com.unity.template.mobile2D",
             "processId": 10638,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 32576,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.sec.android.app.launcher",
+            "processId": 2179,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 14080,
             "exited": false
         }
     ],

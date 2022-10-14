@@ -21,11 +21,11 @@ public class GachaController : MonoBehaviour
     }
     
 
-    private void OnEnable()
-    {
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
-
-    }
+    // private void OnEnable()
+    // {
+    //     SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+    //
+    // }
 
     private void OnDisable()
     {

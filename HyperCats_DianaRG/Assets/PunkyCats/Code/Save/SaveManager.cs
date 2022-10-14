@@ -85,16 +85,19 @@ public class SaveManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        
+        JSON_Controller json = GetComponent<JSON_Controller>();
+        json.OnFinishedLoadingJSONS += LoadAssets;        
     }
 
     private void Start()
     {
-        LoadAssets();
+        // LoadAssets();
     }
 
     void LoadAssets()
     {
+        Debug.Log("On Finished loading JSONS");
+
         _loadAssets = new List<Asset_SO>();
         _unlockAssets = new List<Asset_SO>();
         _lockedAssets = new List<Asset_SO>();
@@ -181,9 +184,13 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("Reset Assets");
 
-        foreach (Asset_SO  asset in assetReferenceManager.AssetReferenceData.AllAssets)
+        foreach (Asset_SO asset in assetReferenceManager.AssetReferenceData.AllAssets)
         {
             asset.IsUnlocked = false;
+            if(asset.ID == "eyes.default" || asset.ID == "skin.default")
+            {
+                asset.IsUnlocked = true;
+            }
         }
         JSON_Controller json = GetComponent<JSON_Controller>();
         json.CreateSaveAssetsJSON();
@@ -224,34 +231,34 @@ public class SaveManager : MonoBehaviour
 }
 
 
-[CustomEditor(typeof(SaveManager))]
-public class SaveManagerEditor : Editor
-{
-     public override void OnInspectorGUI()
-     {
-         DrawDefaultInspector();
-         SaveManager saveManager = target as SaveManager;
-         
-         if (GUILayout.Button("Reset Cat Data"))
-         {
-             saveManager.ResetCatData();
-         }
-         if (GUILayout.Button("Reset Assets"))
-         {
-             saveManager.ResetAllAssets();
-         }  
-         if (GUILayout.Button("Reset Currency"))
-         {
-             saveManager.ResetAllCurrency();
-         }
-         if (GUILayout.Button("Give Test Currency"))
-         {
-             saveManager.GiveTestCurrency();
-         }
-         if (GUILayout.Button("Give All Assets"))
-         {
-             saveManager.UnLockAllAssets();
-         }
-
-     }
-}
+// [CustomEditor(typeof(SaveManager))]
+// public class SaveManagerEditor : Editor
+// {
+//      public override void OnInspectorGUI()
+//      {
+//          DrawDefaultInspector();
+//          SaveManager saveManager = target as SaveManager;
+//          
+//          if (GUILayout.Button("Reset Cat Data"))
+//          {
+//              saveManager.ResetCatData();
+//          }
+//          if (GUILayout.Button("Reset Assets"))
+//          {
+//              saveManager.ResetAllAssets();
+//          }  
+//          if (GUILayout.Button("Reset Currency"))
+//          {
+//              saveManager.ResetAllCurrency();
+//          }
+//          if (GUILayout.Button("Give Test Currency"))
+//          {
+//              saveManager.GiveTestCurrency();
+//          }
+//          if (GUILayout.Button("Give All Assets"))
+//          {
+//              saveManager.UnLockAllAssets();
+//          }
+//
+//      }
+// }

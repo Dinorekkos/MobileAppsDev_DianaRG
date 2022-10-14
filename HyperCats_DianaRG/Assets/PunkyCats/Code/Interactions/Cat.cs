@@ -88,6 +88,8 @@ public class Cat : MonoBehaviour
 
     void InitializeCatData()
     {
+        
+        Debug.Log("Cat Initialized");
         _originPosFood = foodGO.transform.position;
         _originPosHand = handGO.transform.position;
         
@@ -202,14 +204,6 @@ public class Cat : MonoBehaviour
         }
        
 
-        // switch (_catStates)
-        // {
-            // case CatStates.Feeding:
-        
-                // break;
-            
-            // case CatStates.Petting:
-                
     }
 
     public void SetPause(LeanFinger leanFinger)

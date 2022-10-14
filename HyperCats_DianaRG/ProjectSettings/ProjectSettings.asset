@@ -255,7 +255,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Rojo15/Documents/Unity Projects/DINO/WEB/MobileAppsDev_DianaRG/KEY/PUNKY_USER.keystore
+  AndroidKeystoreName: D:/Proyectos/Unity Projects/Universidad/5 Semestre/MobileApps/MobileAppsDev_DianaRG/KEY/PUNKY_USER.keystore
   AndroidKeyaliasName: punky
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -676,7 +676,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Server: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

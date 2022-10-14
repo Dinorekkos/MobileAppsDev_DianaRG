@@ -20,16 +20,25 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        Cat.Instance.OnNeedsAction += HandleCatNeeds;
-        OnCatBarNeedsFill += SaveBarCurrency;
+        Debug.Log(" Game Controller Start ");
+        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
     }
 
-    private void OnEnable()
+    // private void OnEnable()
+    // {
+        // Cat.Instance.OnNeedsAction += HandleCatNeeds;
+        // OnCatBarNeedsFill += SaveBarCurrency;
+    // }
+
+
+
+    void Initialize()
     {
         Cat.Instance.OnNeedsAction += HandleCatNeeds;
         OnCatBarNeedsFill += SaveBarCurrency;
     }
-
+        
+    
     private void OnDisable()
     {
         Cat.Instance.OnNeedsAction -= HandleCatNeeds;

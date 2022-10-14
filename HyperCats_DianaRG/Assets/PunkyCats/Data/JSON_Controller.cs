@@ -23,7 +23,8 @@ public class JSON_Controller : MonoBehaviour
     private string JSON_CurrencyData; 
     private List<Save_AssetSO> _savesAssetsList;
     private List<Save_CurrencySO> _savesCurrencyList;
-    private List<Currency_SO> _loadCurrencies;
+    
+    public Action OnFinishedLoadingJSONS;
 
     public string MyCatDataJSON
     {
@@ -33,19 +34,32 @@ public class JSON_Controller : MonoBehaviour
     
     void Awake()
     {
+        Debug.Log("Se llama awake JSON");
+        InitializeJSONS();        
+    }
+
+    private void OnEnable()
+    {
+    }
+
+    private void InitializeJSONS()
+    {
 #if UNITY_EDITOR
+        Debug.Log("Es Unity Editor");
+
         path_SaveAssets = Application.streamingAssetsPath + "/SaveAssetsData.json";
         path_SaveCatData = Application.streamingAssetsPath + "/SaveCatData.json";
         path_SaveCurrencyData = Application.streamingAssetsPath + "/SaveCurrencyData.json";
 #endif
         
 #if PLATFORM_ANDROID
+        Debug.Log("Es android device");
         path_SaveAssets = Application.persistentDataPath + "/SaveAssetsData.json";
         path_SaveCatData = Application.persistentDataPath + "/SaveCatData.json";
         path_SaveCurrencyData = Application.persistentDataPath + "/SaveCurrencyData.json";
 
 #endif
-        
+        Debug.Log("Path Save Assets: " + path_SaveAssets);
         
         if (!File.Exists( path_SaveAssets))
         {
@@ -85,10 +99,8 @@ public class JSON_Controller : MonoBehaviour
             LoadSaveCurrency(JSON_CurrencyData);
             
         }
-        
-        
+        OnFinishedLoadingJSONS?.Invoke();
     }
-
     public void CreatSaveCatDataJSON()
     {
         string path;
@@ -213,7 +225,6 @@ public class JSON_Controller : MonoBehaviour
 
     public void LoadSaveCurrency(string json)
     {
-        _loadCurrencies = new List<Currency_SO>();
         Save_CurrencySO[] savesCurrencies = JsonHelper.FromJson<Save_CurrencySO>(json);
         for (int i = 0; i < savesCurrencies.Length; i++)
         {

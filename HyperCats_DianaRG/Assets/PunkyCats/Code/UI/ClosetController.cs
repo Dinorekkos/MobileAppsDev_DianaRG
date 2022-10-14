@@ -25,10 +25,10 @@ public class ClosetController : MonoBehaviour
         InitializeInventoryUI(defaultFilter);
     }
 
-    private void OnEnable()
-    { 
-        Closet_UI.Instance.OnChangedFilter += InitializeInventoryUI;
-    }
+    // private void OnEnable()
+    // { 
+    //     Closet_UI.Instance.OnChangedFilter += InitializeInventoryUI;
+    // }
 
     private void OnDisable()
     {
