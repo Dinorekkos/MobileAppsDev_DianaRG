@@ -20,8 +20,15 @@ public class SaveManager : MonoBehaviour
     [SerializeField] private Currency_SO premiumSavedSO;
     [SerializeField] private Currency_SO gachaSavedSO;
 
+    private bool _initialized;
+    
     public Action OnUnlockAsset;
 
+    public bool Initialized
+    {
+        get => _initialized;
+        private set => _initialized = value;
+    }
     public Cat_Data SavedCatData
     {
         get => _savedCatData;
@@ -86,7 +93,7 @@ public class SaveManager : MonoBehaviour
     {
         Instance = this;
         JSON_Controller json = GetComponent<JSON_Controller>();
-        json.OnFinishedLoadingJSONS += LoadAssets;        
+        json.OnFinishedLoadingJSONS += LoadAssets;
     }
 
     private void Start()
@@ -96,6 +103,8 @@ public class SaveManager : MonoBehaviour
 
     void LoadAssets()
     {
+        Debug.Log("<color=#FC7B47>Initialize = </color>" + Initialized);
+
         Debug.Log("On Finished loading JSONS");
 
         _loadAssets = new List<Asset_SO>();
@@ -118,8 +127,11 @@ public class SaveManager : MonoBehaviour
                 _lockedAssets.Add(asset);
             }
         }
-        
+
+        Initialized = true;
         OnFinishedLoadingAssets?.Invoke();
+        // Debug.Log("<color=#FC7B47>On Finished loading Assets = </color>" + name);
+
     }
     
     public void UpdateLists()
@@ -142,8 +154,8 @@ public class SaveManager : MonoBehaviour
             }
 
         }
-        Debug.Log("Unlocked Count = " + _unlockAssets.Count);
-        Debug.Log("Locked Count = " + _lockedAssets.Count);
+        // Debug.Log("Unlocked Count = " + _unlockAssets.Count);
+        // Debug.Log("Locked Count = " + _lockedAssets.Count);
         
         OnUnlockAsset?.Invoke();
     }
@@ -203,8 +215,6 @@ public class SaveManager : MonoBehaviour
         CommonCurrency = 0;
         PremiumCurrency = 0;
         GachaCurrency = 0;
-        JSON_Controller json = GetComponent<JSON_Controller>();
-        json.CreateSaveCurrencyJSON();
     }
     
     public void GiveTestCurrency()
@@ -222,43 +232,44 @@ public class SaveManager : MonoBehaviour
         foreach (Asset_SO  asset in assetReferenceManager.AssetReferenceData.AllAssets)
         {
             asset.IsUnlocked = true;
-            // JSON_Controller json = GetComponent<JSON_Controller>();
-            // json.ChangeAssetValues(asset.ID, true);
         }
 
     }
     #endregion
 }
 
+#if UNITY_EDITOR_WIN
+[CustomEditor(typeof(SaveManager))]
+public class SaveManagerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+        SaveManager saveManager = target as SaveManager;
+          
+        if (GUILayout.Button("Reset Cat Data"))
+        {
+            saveManager.ResetCatData();
+        }
+        if (GUILayout.Button("Reset Assets"))
+        {
+            saveManager.ResetAllAssets();
+        }  
+        if (GUILayout.Button("Reset Currency"))
+        {
+            saveManager.ResetAllCurrency();
+        }
+        if (GUILayout.Button("Give Test Currency"))
+        {
+            saveManager.GiveTestCurrency();
+        }
+        if (GUILayout.Button("Give All Assets"))
+        {
+            saveManager.UnLockAllAssets();
+        }
 
-// [CustomEditor(typeof(SaveManager))]
-// public class SaveManagerEditor : Editor
-// {
-//      public override void OnInspectorGUI()
-//      {
-//          DrawDefaultInspector();
-//          SaveManager saveManager = target as SaveManager;
-//          
-//          if (GUILayout.Button("Reset Cat Data"))
-//          {
-//              saveManager.ResetCatData();
-//          }
-//          if (GUILayout.Button("Reset Assets"))
-//          {
-//              saveManager.ResetAllAssets();
-//          }  
-//          if (GUILayout.Button("Reset Currency"))
-//          {
-//              saveManager.ResetAllCurrency();
-//          }
-//          if (GUILayout.Button("Give Test Currency"))
-//          {
-//              saveManager.GiveTestCurrency();
-//          }
-//          if (GUILayout.Button("Give All Assets"))
-//          {
-//              saveManager.UnLockAllAssets();
-//          }
-//
-//      }
-// }
+    }
+}
+
+#endif
+

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DinoFramework;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,12 +13,8 @@ public class Currency_UI : MonoBehaviour
     }
     void Start()
     {
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialze;
-        GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
-        UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
-        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
-        
-        Initialze();
+        if (SaveManager.Instance.Initialized) Initialze();
+
     }
 
     // private void OnEnable()
@@ -43,6 +36,10 @@ public class Currency_UI : MonoBehaviour
     
     void Initialze()
     {
+        GameController.Instance.OnCatBarNeedsFill += UpdateCurrencyUI;
+        UI_Controller.Instance.OnChangeUI += UpdateCurrencyUI;
+        CurrencyManager.Instance.OnCurrencyChanged += UpdateCurrencyUI;
+
        UpdateCurrencyUI(0);
     }
 

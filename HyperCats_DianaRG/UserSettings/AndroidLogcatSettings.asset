@@ -3,35 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "R5CT60XKTWL",
         "name": "com.PixiGrafix.PunkyCats",
-        "processId": 14080,
+        "processId": 13576,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 9980,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 13308,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.DefaultCompany.com.unity.template.mobile2D",
-            "processId": 10638,
-            "exited": true
-        },
-        {
-            "deviceId": "R5CT60XKTWL",
-            "name": "com.PixiGrafix.PunkyCats",
-            "processId": 32576,
-            "exited": true
-        },
         {
             "deviceId": "R5CT60XKTWL",
             "name": "com.sec.android.app.launcher",
@@ -42,6 +18,36 @@
             "deviceId": "R5CT60XKTWL",
             "name": "com.PixiGrafix.PunkyCats",
             "processId": 14080,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 30788,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 13847,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 25556,
+            "exited": true
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 30276,
+            "exited": false
+        },
+        {
+            "deviceId": "R5CT60XKTWL",
+            "name": "com.PixiGrafix.PunkyCats",
+            "processId": 13576,
             "exited": false
         }
     ],

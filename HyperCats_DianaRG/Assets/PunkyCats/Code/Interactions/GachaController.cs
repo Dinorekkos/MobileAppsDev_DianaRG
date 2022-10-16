@@ -17,7 +17,11 @@ public class GachaController : MonoBehaviour
 
     void Start()
     {
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        if (SaveManager.Instance.Initialized) Initialize();
+        // else
+        // {
+            // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        // }
     }
     
 
@@ -35,6 +39,7 @@ public class GachaController : MonoBehaviour
 
     void Initialize()
     {
+        // Debug.Log("<color=#FC7B47>On Finished loading Assets = </color>" + name);
         lockedAssets = SaveManager.Instance.LockedAssets;
 
     }

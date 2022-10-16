@@ -23,7 +23,12 @@ public class Gameplay_UI : MonoBehaviour
 
     private void Start()
     {
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        if (SaveManager.Instance.Initialized) Initialize();
+
+        // else
+        // {
+            // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        // }
     }
 
     private void OnEnable()
@@ -40,6 +45,8 @@ public class Gameplay_UI : MonoBehaviour
     
     void Initialize()
     {
+        // Debug.Log("<color=#FC7B47>On Finished loading Assets = </color>" + name);
+
         Cat.Instance.OnNeedsAction += UpdateSliderInteractions;
         GameController.Instance.OnCatBarNeedsFill += ResetSliderInteractions;
         
@@ -75,10 +82,11 @@ public class Gameplay_UI : MonoBehaviour
 
     void ResetSliderInteractions(int amount)
     {
-        amount = 0;
-        interactPoints = amount;
-        slider.value = interactPoints;
-        
+        Debug.Log("<color=#FF86FD>Reset Slider = </color>" + name);
+
+        interactPoints = 0;
+        slider.value = 0;
+
     }
     
 

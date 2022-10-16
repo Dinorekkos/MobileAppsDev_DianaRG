@@ -20,8 +20,12 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(" Game Controller Start ");
-        SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        if (SaveManager.Instance.Initialized) Initialize();
+        
+        // else
+        // {
+        // SaveManager.Instance.OnFinishedLoadingAssets += Initialize;
+        // }
     }
 
     // private void OnEnable()
@@ -29,11 +33,11 @@ public class GameController : MonoBehaviour
         // Cat.Instance.OnNeedsAction += HandleCatNeeds;
         // OnCatBarNeedsFill += SaveBarCurrency;
     // }
-
-
-
+    
     void Initialize()
     {
+        Debug.Log("<color=#FC7B47>Initilized= </color>" + name);
+
         Cat.Instance.OnNeedsAction += HandleCatNeeds;
         OnCatBarNeedsFill += SaveBarCurrency;
     }
@@ -48,6 +52,7 @@ public class GameController : MonoBehaviour
     
     void HandleCatNeeds(float catNeeds)
     {
+
         if (catNeeds >= needsCatBar)
         {
             OnCatBarNeedsFill?.Invoke(currencyForBar);
@@ -56,6 +61,8 @@ public class GameController : MonoBehaviour
 
     private void SaveBarCurrency(int cuantity)
     { 
+        Debug.Log("<color=#FC7B47>Add currency= </color>" + name);
+
         CurrencyManager.Instance.AddCurrency(cuantity, CurrencyType.Common);
         
     }

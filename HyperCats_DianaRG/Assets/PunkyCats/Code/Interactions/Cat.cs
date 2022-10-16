@@ -50,14 +50,14 @@ public class Cat : MonoBehaviour
 
     private void Awake()
     {
+
         Instance = this;
     }
 
     void Start()
     {
-        SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
-        GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
 
+        if (SaveManager.Instance.Initialized) InitializeCatData();
     }
 
     private void Update()
@@ -73,6 +73,7 @@ public class Cat : MonoBehaviour
 
     private void OnEnable()
     {
+
         SaveManager.Instance.OnFinishedLoadingAssets += InitializeCatData;
         GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
 
@@ -88,8 +89,8 @@ public class Cat : MonoBehaviour
 
     void InitializeCatData()
     {
-        
-        Debug.Log("Cat Initialized");
+        GameController.Instance.OnCatBarNeedsFill += ResetCatNeeds;
+        // Debug.Log("<color=#FC7B47>On Finished loading Assets = </color>" + name);
         _originPosFood = foodGO.transform.position;
         _originPosHand = handGO.transform.position;
         
@@ -262,7 +263,7 @@ public class Cat : MonoBehaviour
 
     void ResetCatNeeds(int amount)
     {
-        amount = 0;
-        catNeeds = amount;
+        Debug.Log("<color=#FF86FD>Reset Cat Needs = </color>" + name);
+        catNeeds = 0;
     }
 }
