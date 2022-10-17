@@ -7,6 +7,8 @@ public class UI_Controller : MonoBehaviour
 {
     public static UI_Controller Instance;
     [SerializeField] private GameObject[] InGameUIs;
+    [SerializeField] private int currentUI;
+    [SerializeField] private int gameplayUI;
 
     public Action<int> OnChangeUI;
 
@@ -18,14 +20,26 @@ public class UI_Controller : MonoBehaviour
     }
     
 
-    public void OpenWindowUI(int selectedUI)
+    public void OpenWindowUI(int selectedUI, bool closeOtherUIs = true)
     {
         for (int i = 0; i < InGameUIs.Length; i++)
         {
-            InGameUIs[i].SetActive(false);
+            InGameUIs[i].SetActive(!closeOtherUIs);
         }
         InGameUIs[selectedUI].SetActive(true);
+        currentUI = selectedUI;
         UpdateCurrenciesUIs();
+    }
+
+    public void UIGoBack()
+    {
+        if (currentUI>0)
+        {
+            InGameUIs[currentUI].SetActive(false);
+            InGameUIs[gameplayUI].SetActive(true);
+            currentUI = -1;
+        }
+        
     }
     
     public void UpdateCurrenciesUIs()

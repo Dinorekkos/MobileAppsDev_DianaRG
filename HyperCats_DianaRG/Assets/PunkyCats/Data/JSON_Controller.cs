@@ -243,9 +243,6 @@ public class JSON_Controller : MonoBehaviour
     public void SetCatDataChanges(string json)
     {
         string path;
-#if UNITY_EDITOR
-         path = Application.streamingAssetsPath + "/SaveCatData.json";
-#endif
 #if PLATFORM_ANDROID
         path = Application.persistentDataPath + "/SaveCatData.json";
 #endif
@@ -269,13 +266,8 @@ public class JSON_Controller : MonoBehaviour
     }
     public void ChangeAssetValues(string assetID, bool newValue)
     {
-
         string path;
-
-#if UNITY_EDITOR
-        path = Application.streamingAssetsPath + "/SaveAssetsData.json";
-#endif
-
+        
 #if PLATFORM_ANDROID
         path = Application.persistentDataPath + "/SaveAssetsData.json";
 #endif

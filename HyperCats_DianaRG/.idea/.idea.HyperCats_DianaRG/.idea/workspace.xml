@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d2908611-a987-4224-a099-184261f25e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/Save/SaveManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/UI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/UI_Controller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Data/JSON_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Data/JSON_Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ClosetUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ClosetUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GachaUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GameplayUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/GameplayUI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/GameplayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/GameplayUI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,21 +37,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "MemberGeneratorId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MemberGeneratorId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Program Files\UnityEditors\2021.3.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.8f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Proyectos\Unity Projects\Universidad\5 Semestre\MobileApps\MobileAppsDev_DianaRG\HyperCats_DianaRG" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -118,6 +112,7 @@
       <workItem from="1665527424237" duration="3613000" />
       <workItem from="1665706376535" duration="4260000" />
       <workItem from="1665944442447" duration="11847000" />
+      <workItem from="1666038657827" duration="2841000" />
     </task>
     <servers />
   </component>
