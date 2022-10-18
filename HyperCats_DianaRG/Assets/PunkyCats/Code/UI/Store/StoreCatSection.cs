@@ -4,8 +4,9 @@ using DinoFramework;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoreSection : MonoBehaviour
+public class StoreCatSection : MonoBehaviour
 {
+    // [SerializeField] private StoreData _storeData;
     [SerializeField] private Image icon;
     [SerializeField] private AssetType _sectionType;
 
