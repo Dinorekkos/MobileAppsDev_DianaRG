@@ -3,20 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d2908611-a987-4224-a099-184261f25e2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HyperCats_DianaRG/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Store/StoreSection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Store/StoreCatSection.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Store/StoreSection.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Code/UI/Store/StoreCatSection.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ItemCloset Variant.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ItemCloset Variant.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ItemViewer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ItemViewer.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/Normal_Currency.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/Normal_Currency.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ReturnButton.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/ReturnButton.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/GameplayUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/GameplayUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/StoreUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Prefabs/UI/UI/StoreUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PunkyCats/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +110,8 @@
       <workItem from="1665706376535" duration="4260000" />
       <workItem from="1665944442447" duration="11847000" />
       <workItem from="1666038657827" duration="2841000" />
-      <workItem from="1666131562488" duration="2249000" />
+      <workItem from="1666131562488" duration="2624000" />
+      <workItem from="1666134898369" duration="612000" />
     </task>
     <servers />
   </component>
